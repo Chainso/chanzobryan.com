@@ -66,11 +66,15 @@ description: Work experience, education, and professional background
 
 ## Education
 
-<div style="margin-top: 3rem;">
-  <h3>Honours BSc Computer Science</h3>
-  <div class="company">University of Toronto</div>
-  <div class="period">September 2017 - April 2022</div>
-  <div class="location" style="font-size: 0.875rem; color: var(--text-tertiary); margin-top: 0.25rem;">Toronto, Ontario</div>
+<div class="experience-timeline">
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Honours BSc Computer Science</h3>
+      <div class="company">University of Toronto</div>
+      <div class="period">September 2017 - April 2022</div>
+      <div class="location" style="font-size: 0.875rem; color: var(--text-tertiary); margin-top: 0.25rem;">Toronto, Ontario</div>
+    </div>
+  </div>
 </div>
 
 ---
