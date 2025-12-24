@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // Component Styles
 
 // Buttons
@@ -107,11 +109,34 @@
   border: 1px solid var(--border-color);
   border-radius: $radius-lg;
   transition: all $transition-base;
+  overflow: hidden;
 
   &:hover {
     transform: translateY(-4px);
     box-shadow: $shadow-lg;
     border-color: var(--accent);
+  }
+
+  .project-image {
+    margin: calc(-1 * #{$space-xl}) calc(-1 * #{$space-xl}) $space-xl;
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform $transition-base;
+    }
+  }
+
+  &:hover .project-image img {
+    transform: scale(1.05);
   }
 
   .project-header {

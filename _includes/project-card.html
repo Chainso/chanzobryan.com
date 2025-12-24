@@ -5,6 +5,12 @@
 {% endcomment %}
 
 <article class="project-card project-{{ include.type }}">
+  {% if include.project.image %}
+  <div class="project-image">
+    <img src="{{ include.project.image | relative_url }}" alt="{{ include.project.name }}" loading="lazy">
+  </div>
+  {% endif %}
+
   <div class="project-header">
     <h3>{{ include.project.name }}</h3>
     {% if include.project.company %}
@@ -52,12 +58,6 @@
     {% if include.project.demo %}
     <a href="{{ include.project.demo }}" class="btn btn-secondary" target="_blank" rel="noopener">Live Demo</a>
     {% endif %}
-  </div>
-  {% endif %}
-
-  {% if include.type == "professional" %}
-  <div class="project-note">
-    <small>Professional work - code not publicly available</small>
   </div>
   {% endif %}
 </article>

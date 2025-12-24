@@ -39,7 +39,7 @@ I'm passionate about two main areas:
 
 ## Personal Projects
 
-All my [personal projects](/projects) are built in my spare time, completely separate from my professional work. They're a playground for experimenting with new technologies and exploring ideas in AI and game development.
+All my [personal projects](/projects) are playgrounds for experimenting with new technologies and exploring ideas in AI and game development.
 
 Some highlights:
 

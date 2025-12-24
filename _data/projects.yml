@@ -1,17 +1,16 @@
 featured:
   - name: "Splice"
     slug: "splice"
+    image: "/assets/images/projects/splice.png"
     tagline: "AI-powered bill splitting mobile app"
-    description: "A React Native app for expense tracking with Gemini-powered receipt scanning and real-time sync."
+    description: "A React Native app for expense tracking with AI-powered receipt scanning and real-time sync."
     tech:
       - TypeScript
       - React Native
       - Expo
       - Supabase
-      - Gemini AI
     github: "https://github.com/Chainso/splice"
     highlights:
-      - "Google Gemini Flash 2.5 for receipt OCR"
       - "Supabase PostgreSQL with Row Level Security"
       - "Material 3 design with dark/light mode"
       - "Passwordless auth (Email OTP + Google OAuth)"
@@ -19,13 +18,15 @@ featured:
 
   - name: "Terra Mystica RL"
     slug: "terramystica-rl"
+    image: "/assets/images/projects/terramystica.png"
     tagline: "High-performance board game AI environment"
-    description: "A rules-complete implementation of Terra Mystica in Rust, exposed as a PettingZoo RL environment via PyO3."
+    description: "A rules-complete implementation of Terra Mystica in Rust, exposed as a PettingZoo/PyTorch RL environment via PyO3."
     tech:
       - Rust
       - Python
       - PyO3
       - PettingZoo
+      - PyTorch
     github: "https://github.com/Chainso/terramystica-rl"
     highlights:
       - "Core engine in Rust for maximum performance"
@@ -50,55 +51,21 @@ featured:
       - "Distributed training support"
     status: "maintained"
 
-  - name: "SpeedRunners AI"
-    slug: "speedrunners-ai"
-    tagline: "Neural network learns to play SpeedRunners"
-    description: "An end-to-end system for training AI to play SpeedRunners using screen capture and DLL injection."
+  - name: "SpeedRunners RL"
+    slug: "speedrunners-rl"
+    image: "/assets/images/projects/speedrunners.png"
+    tagline: "Deep RL agents playing SpeedRunners via direct game injection"
+    description: "A modular reinforcement learning system for SpeedRunners. It uses a C++ DLL to hook into the game process, exposing a Gymnasium-compatible environment for training agents like Rainbow IQN and RND."
     tech:
       - Python
       - C++
-      - TensorFlow
-      - OpenCV
-    github: "https://github.com/Chainso/SpeedRunnersAI"
-    related_repos:
-      - name: "sr-gym"
-        url: "https://github.com/Chainso/sr-gym"
-      - name: "sr-lib"
-        url: "https://github.com/Chainso/sr-lib"
+      - PyTorch
+      - Gymnasium
+      - HLRL
+    github: "https://github.com/Chainso/speedrunners-rl"
     highlights:
-      - "DLL injection for game state extraction"
-      - "OpenAI Gym-compatible environment"
-      - "Imitation + reinforcement learning hybrid"
-      - "CNN-LSTM architecture for temporal reasoning"
-    status: "complete"
-
-notable:
-  - name: "Deployment Changelog"
-    github: "https://github.com/Chainso/deployment-changelog"
-    tech: ["Rust"]
-    description: "CLI and library for generating changelogs from Git with Jira/Bitbucket/Spinnaker integration."
-    crates_io: true
-
-  - name: "MIT OCW Mobile"
-    github: "https://github.com/Chainso/mit-ocw"
-    tech: ["Dart", "Flutter"]
-    description: "Mobile companion app for MIT OpenCourseWare."
-
-professional:
-  - name: "Basilisk Activity Logging"
-    company: "Netflix"
-    role: "Lead Developer / Architect"
-    impact: "Organization-wide adoption"
-    description: "Centralized activity logging platform built from scratch, partnering with 6+ teams."
-
-  - name: "Elasticsearch Infrastructure"
-    company: "Netflix"
-    role: "Senior Engineer"
-    impact: "Zero incidents, 3B+ docs/day"
-    description: "Novel indexing strategy handling billions of documents with zero incident rate."
-
-  - name: "Event Infrastructure Migration"
-    company: "Netflix"
-    role: "Tech Lead"
-    impact: "$250k/year savings"
-    description: "Zero-downtime migration of eventing infrastructure supporting millions of events."
+      - "Direct C++ DLL injection for game state access"
+      - "Custom Gymnasium environment via named pipes"
+      - "Rainbow IQN and RND agents implemented in PyTorch"
+      - "Modular architecture: sr-lib, sr-gym, and sr-ai"
+    status: "active"

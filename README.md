@@ -6,8 +6,6 @@ Personal website for Chanzo Bryan - Senior Software Engineer at Netflix.
 
 This is my personal website showcasing my work, projects, and writing. Built with Jekyll and hosted on GitHub Pages.
 
-**Important**: Personal projects featured on this site are built in my spare time and are completely separate from my professional work at Netflix/Celestica.
-
 ## Tech Stack
 
 - **Static Site Generator**: Jekyll 4.x

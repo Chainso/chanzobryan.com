@@ -4,8 +4,8 @@
 
 // Import order matters - variables and themes first, then base, then specifics
 
-@import "variables";
-@import "themes";
-@import "base";
-@import "layout";
-@import "components";
+@use "variables";
+@use "themes";
+@use "base";
+@use "layout";
+@use "components";
