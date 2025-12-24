@@ -70,7 +70,7 @@ description: Work experience, education, and professional background
   <h3>Honours BSc Computer Science</h3>
   <p style="color: var(--text-secondary);">
     University of Toronto, Toronto, Ontario<br>
-    September 2017 - April 2022 | cGPA: 3.63/4.0
+    September 2017 - April 2022
   </p>
 </div>
 
