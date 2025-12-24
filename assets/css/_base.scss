@@ -165,9 +165,5 @@ table {
   width: 100%;
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 $space-md;
-
-  @media (min-width: $screen-md) {
-    padding: 0 1.25rem;
-  }
+  padding: 0 $container-padding;
 }
