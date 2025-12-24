@@ -1,0 +1,11 @@
+---
+# Front matter comment to ensure Jekyll processes this file
+---
+
+// Import order matters - variables and themes first, then base, then specifics
+
+@import "variables";
+@import "themes";
+@import "base";
+@import "layout";
+@import "components";

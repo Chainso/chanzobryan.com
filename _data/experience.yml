@@ -1,0 +1,37 @@
+- company: Netflix
+  role: Senior Software Engineer
+  period: "July 2022 - Present"
+  location: "Los Gatos, CA"
+  description: "Lead the product vision and architectural strategy for my organization's activity logging and eventing ecosystems, fostering cross-functional alignment to unify core content and studio infrastructure into cohesive products that accelerate critical business workflows that underpin the launching of Netflix shows."
+  highlights:
+    - "Spearheaded a data-driven, domain-level initiative to architect a centralized activity logging platform from scratch, forging cross-functional partnerships with 6+ teams to define a unified auditing strategy for the organization."
+    - "De-risked an imminent long-term infrastructure outage by engineering a novel Elasticsearch indexing strategy to ingest 3B+ documents daily, reducing the incident rate to 0%."
+    - "Orchestrated a zero-downtime migration of eventing infrastructure supporting millions of events with a cost savings of $250k/year, forming joint partnerships with platform teams to ensure business continuity and scalability."
+    - "Designed and built intuitive UI/UX for critical platform tooling, significantly increasing developer productivity and reducing incident risk by eliminating error-prone manual configurations."
+    - "Bootstrapped and led the local organization's AI efforts with a focused working group, championing the integration of LLM agents into standard development workflows."
+    - "Drove grassroots organizational change for the widespread adoption of AI tooling for engineering and operations by organizing organization-wide engineering presentations and workshops."
+    - "Led the UI/UX design and engineering for activity logging experiences, streamlining critical audit workflows for business data and reducing operational and support burden."
+    - "Mentored junior engineers and collaborated with talent coordinators to organize and host Q&A/engineering talks/workshops for early talent."
+
+- company: Celestica
+  role: Full Stack Cloud Software Engineer
+  period: "June 2020 - May 2022"
+  location: "Toronto, ON"
+  highlights:
+    - "Created REST APIs using Java Spring and JAX-RS with Google Cloud Datastore."
+    - "Used time complexity analysis to improve Google Cloud Datastore entity retrieval in Java, leading to a 400% speedup in page load times, and 200% speedup in report generation."
+    - "Designed efficient query splitting in Java for Google Cloud Datastore, enabling the ability for complex searches."
+    - "Developed a method to store large amounts of data 300% more efficiently in GCD, saving $20k+ in storage costs."
+    - "Created configurable forms using Ektron CMS, eliminating the need for developer intervention in creating points of contact, saving thousands of dollars and tens of hours on a regular basis."
+    - "Lead the process on implementing Jenkins with automated unit testing in our CI/CD pipeline deploying to IBM cloud improving deployment confidence."
+    - "Transformed cloud application infrastructure management from manual to Git source controlled Terraform scripts."
+    - "Developed public facing websites with millions of monthly active users on Microsoft Azure using C# and ASP.NET."
+
+- company: Earlier Roles
+  entries:
+    - role: "Full Stack Developer"
+      company: "Matrix Meridian"
+      period: "Jan 2020 - May 2020"
+    - role: "Full Stack Developer"
+      company: "Richmond University Vision Care"
+      period: "Sep 2019 - Dec 2019"

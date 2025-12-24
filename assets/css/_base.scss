@@ -1,0 +1,169 @@
+// Reset and Base Styles
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-sans;
+  font-size: $text-base;
+  line-height: $leading-normal;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-bold;
+  line-height: $leading-tight;
+  color: var(--text-primary);
+  margin-bottom: $space-md;
+}
+
+h1 { font-size: $text-4xl; }
+h2 { font-size: $text-3xl; }
+h3 { font-size: $text-2xl; }
+h4 { font-size: $text-xl; }
+h5 { font-size: $text-lg; }
+h6 { font-size: $text-base; }
+
+p {
+  margin-bottom: $space-md;
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: var(--accent-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: $radius-sm;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-bottom: $space-md;
+  padding-left: $space-xl;
+
+  li {
+    margin-bottom: $space-sm;
+    color: var(--text-secondary);
+  }
+}
+
+// Code
+code {
+  font-family: $font-mono;
+  font-size: 0.9em;
+  padding: $space-xs $space-sm;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-sm;
+}
+
+pre {
+  margin-bottom: $space-md;
+  padding: $space-lg;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: $radius-md;
+  overflow-x: auto;
+
+  code {
+    padding: 0;
+    background: none;
+    border: none;
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Forms
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Horizontal Rule
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: $space-3xl 0;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: $space-md;
+
+  th, td {
+    padding: $space-sm $space-md;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  th {
+    font-weight: $font-semibold;
+    color: var(--text-primary);
+  }
+
+  td {
+    color: var(--text-secondary);
+  }
+}
+
+// Utility Classes
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}

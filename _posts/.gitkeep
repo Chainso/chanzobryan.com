@@ -1,0 +1,18 @@
+# This file ensures the _posts directory is tracked by git
+# Remove this file once you add your first blog post
+
+# To create a blog post, add a file with the format:
+# YYYY-MM-DD-title-of-post.md
+#
+# Example: 2024-01-15-getting-started-with-reinforcement-learning.md
+#
+# Front matter template:
+# ---
+# layout: post
+# title: "Your Post Title"
+# date: 2024-01-15
+# tags: [reinforcement-learning, ai, python]
+# reading_time: 5
+# ---
+#
+# Your content here...

@@ -1,0 +1,141 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero">
+  <div class="container">
+    <img src="/assets/images/profile.jpg" alt="Chanzo Bryan" class="hero-image">
+    <h1>Hi, I'm Chanzo Bryan</h1>
+    <p class="hero-subtitle">Senior Software Engineer at Netflix</p>
+    <p class="hero-description">
+      I build scalable distributed systems and create AI that plays games.
+      Passionate about reinforcement learning, performance optimization, and elegant solutions to complex problems.
+    </p>
+    <div class="hero-actions">
+      <a href="/projects" class="btn btn-primary">View Projects</a>
+      <a href="/contact" class="btn btn-secondary">Get in Touch</a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What I Do</h2>
+      <p>Building systems and AI across different domains</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="feature-card">
+        <h3>Distributed Systems</h3>
+        <p>
+          Building scalable backend services at Netflix. Expert in Python, Java, and creating
+          high-performance systems that handle millions of requests.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>AI & Reinforcement Learning</h3>
+        <p>
+          Creating AI agents that master complex games. Built environments for Terra Mystica,
+          SpeedRunners, and research into multi-agent learning systems.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Full-Stack Development</h3>
+        <p>
+          From React Native mobile apps to Rust-based game engines. Comfortable across
+          the entire stack with a focus on performance and user experience.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <p>Personal side projects built in my spare time</p>
+    </div>
+
+    <div class="grid grid-2">
+      {% for project in site.data.projects.featured limit:4 %}
+        {% include project-card.html project=project type="featured" %}
+      {% endfor %}
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="/projects" class="btn btn-primary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.hero-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 2rem;
+  border: 4px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.feature-card h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+</style>

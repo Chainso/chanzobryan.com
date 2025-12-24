@@ -1,0 +1,69 @@
+// Theme System using CSS Custom Properties
+
+:root {
+  // Light theme (default)
+  --bg-primary: #{$light-bg-primary};
+  --bg-secondary: #{$light-bg-secondary};
+  --bg-tertiary: #{$light-bg-tertiary};
+  --text-primary: #{$light-text-primary};
+  --text-secondary: #{$light-text-secondary};
+  --text-tertiary: #{$light-text-tertiary};
+  --border-color: #{$light-border};
+  --accent: #{$light-accent};
+  --accent-hover: #{$light-accent-hover};
+
+  // Shadow opacity varies by theme
+  --shadow-opacity: 0.1;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{$dark-bg-primary};
+  --bg-secondary: #{$dark-bg-secondary};
+  --bg-tertiary: #{$dark-bg-tertiary};
+  --text-primary: #{$dark-text-primary};
+  --text-secondary: #{$dark-text-secondary};
+  --text-tertiary: #{$dark-text-tertiary};
+  --border-color: #{$dark-border};
+  --accent: #{$dark-accent};
+  --accent-hover: #{$dark-accent-hover};
+
+  --shadow-opacity: 0.3;
+}
+
+// Theme-specific adjustments
+[data-theme="dark"] {
+  // Stronger borders in dark mode
+  .project-card,
+  .contact-form,
+  .skill-category {
+    border-color: var(--bg-tertiary);
+  }
+
+  // Code blocks
+  pre, code {
+    background-color: var(--bg-secondary);
+    border-color: var(--bg-tertiary);
+  }
+
+  // Enhanced shadows for dark mode
+  .project-card:hover,
+  .btn:hover {
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.05);
+  }
+}
+
+// Smooth theme transitions
+html {
+  transition: background-color $transition-base, color $transition-base;
+}
+
+body,
+.site-header,
+.site-footer,
+.project-card,
+.btn {
+  transition:
+    background-color $transition-base,
+    color $transition-base,
+    border-color $transition-base;
+}

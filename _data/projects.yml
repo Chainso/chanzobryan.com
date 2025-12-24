@@ -1,0 +1,104 @@
+featured:
+  - name: "Terra Mystica RL"
+    slug: "terramystica-rl"
+    tagline: "High-performance board game AI environment"
+    description: "A rules-complete implementation of Terra Mystica in Rust, exposed as a PettingZoo RL environment via PyO3."
+    tech:
+      - Rust
+      - Python
+      - PyO3
+      - PettingZoo
+    github: "https://github.com/Chainso/terramystica-rl"
+    highlights:
+      - "Core engine in Rust for maximum performance"
+      - "PettingZoo AEC API for RL library compatibility"
+      - "60+ unit tests with high coverage"
+      - "Pygame visualization for debugging"
+    status: "active"
+
+  - name: "Splice"
+    slug: "splice"
+    tagline: "AI-powered bill splitting mobile app"
+    description: "A React Native app for expense tracking with Gemini-powered receipt scanning and real-time sync."
+    tech:
+      - TypeScript
+      - React Native
+      - Expo
+      - Supabase
+      - Gemini AI
+    github: "https://github.com/Chainso/splice"
+    highlights:
+      - "Google Gemini Flash 2.5 for receipt OCR"
+      - "Supabase PostgreSQL with Row Level Security"
+      - "Material 3 design with dark/light mode"
+      - "Passwordless auth (Email OTP + Google OAuth)"
+    status: "active"
+
+  - name: "HLRL"
+    slug: "hlrl"
+    tagline: "Modular reinforcement learning library"
+    description: "A from-scratch RL library with state-of-the-art algorithms and flexible wrapper-based architecture."
+    tech:
+      - Python
+      - PyTorch
+    github: "https://github.com/Chainso/HLRL"
+    stars: 3
+    highlights:
+      - "SAC, DQN, IQN, RND, Ape-X, R2D2 algorithms"
+      - "Wrapper-based composition for mixing algorithms"
+      - "Backend-agnostic core abstractions"
+      - "Distributed training support"
+    status: "maintained"
+
+  - name: "SpeedRunners AI"
+    slug: "speedrunners-ai"
+    tagline: "Neural network learns to play SpeedRunners"
+    description: "An end-to-end system for training AI to play SpeedRunners using screen capture and DLL injection."
+    tech:
+      - Python
+      - C++
+      - TensorFlow
+      - OpenCV
+    github: "https://github.com/Chainso/SpeedRunnersAI"
+    related_repos:
+      - name: "sr-gym"
+        url: "https://github.com/Chainso/sr-gym"
+      - name: "sr-lib"
+        url: "https://github.com/Chainso/sr-lib"
+    highlights:
+      - "DLL injection for game state extraction"
+      - "OpenAI Gym-compatible environment"
+      - "Imitation + reinforcement learning hybrid"
+      - "CNN-LSTM architecture for temporal reasoning"
+    status: "complete"
+
+notable:
+  - name: "Deployment Changelog"
+    github: "https://github.com/Chainso/deployment-changelog"
+    tech: ["Rust"]
+    description: "CLI and library for generating changelogs from Git with Jira/Bitbucket/Spinnaker integration."
+    crates_io: true
+
+  - name: "MIT OCW Mobile"
+    github: "https://github.com/Chainso/mit-ocw"
+    tech: ["Dart", "Flutter"]
+    description: "Mobile companion app for MIT OpenCourseWare."
+
+professional:
+  - name: "Basilisk Activity Logging"
+    company: "Netflix"
+    role: "Lead Developer / Architect"
+    impact: "Organization-wide adoption"
+    description: "Centralized activity logging platform built from scratch, partnering with 6+ teams."
+
+  - name: "Elasticsearch Infrastructure"
+    company: "Netflix"
+    role: "Senior Engineer"
+    impact: "Zero incidents, 3B+ docs/day"
+    description: "Novel indexing strategy handling billions of documents with zero incident rate."
+
+  - name: "Event Infrastructure Migration"
+    company: "Netflix"
+    role: "Tech Lead"
+    impact: "$250k/year savings"
+    description: "Zero-downtime migration of eventing infrastructure supporting millions of events."

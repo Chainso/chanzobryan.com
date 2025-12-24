@@ -1,0 +1,57 @@
+# Site settings
+title: Chanzo Bryan
+description: Senior Software Engineer at Netflix. Building scalable systems and AI that plays games.
+url: "https://chanzobryan.com"
+baseurl: ""
+
+# Author
+author:
+  name: Chanzo Bryan
+  email: chanzobryan@gmail.com
+  location: Toronto / California
+
+# Social links
+social:
+  github: Chainso
+  linkedin: chanzo
+  email: chanzobryan@gmail.com
+
+# Feature flags
+features:
+  blog_enabled: false
+  analytics_enabled: false
+  contact_form_enabled: true
+
+# Web3Forms
+web3forms:
+  access_key: "fe029f3c-bf62-4ad4-979d-c0fc20565ba5"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /blog/:title/
+
+# Sass
+sass:
+  style: compressed
+  sass_dir: _sass
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Collections
+collections:
+  projects:
+    output: false
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - README.md

@@ -1,0 +1,54 @@
+languages:
+  - name: Python
+    icon: python
+    proficiency: expert
+  - name: Java
+    icon: java
+    proficiency: expert
+  - name: TypeScript
+    icon: typescript
+    proficiency: advanced
+  - name: Rust
+    icon: rust
+    proficiency: advanced
+  - name: C++
+    icon: cplusplus
+    proficiency: intermediate
+  - name: C#
+    icon: csharp
+    proficiency: intermediate
+
+frameworks:
+  - name: React
+    category: frontend
+  - name: React Native
+    category: mobile
+  - name: Spring
+    category: backend
+  - name: Node.js
+    category: backend
+  - name: PyTorch
+    category: ml
+  - name: TensorFlow
+    category: ml
+
+infrastructure:
+  - name: Kafka
+    category: messaging
+  - name: Elasticsearch
+    category: search
+  - name: Docker
+    category: containers
+  - name: Terraform
+    category: iac
+  - name: GCP
+    category: cloud
+  - name: Azure
+    category: cloud
+
+domains:
+  - Distributed Systems
+  - Event-Driven Architecture
+  - Reinforcement Learning
+  - Game AI
+  - Full-Stack Development
