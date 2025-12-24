@@ -69,8 +69,8 @@ description: Work experience, education, and professional background
 <div style="margin-top: 3rem;">
   <h3>Honours BSc Computer Science</h3>
   <p style="color: var(--text-secondary);">
-    University of Toronto, Toronto, Ontario<br>
-    September 2017 - April 2022
+    University of Toronto<br>
+    September 2017 - April 2022 | Toronto, Ontario
   </p>
 </div>
 
