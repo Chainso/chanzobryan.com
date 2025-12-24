@@ -67,10 +67,10 @@ description: Work experience, education, and professional background
 ## Education
 
 <div style="margin-top: 3rem;">
-  <h3>Bachelor of Applied Science in Computer Engineering</h3>
+  <h3>Honours BSc Computer Science</h3>
   <p style="color: var(--text-secondary);">
-    University of Toronto<br>
-    Focus: Machine Learning, Systems Programming, Software Engineering
+    University of Toronto, Toronto, Ontario<br>
+    September 2017 - April 2022 | cGPA: 3.63/4.0
   </p>
 </div>
 
