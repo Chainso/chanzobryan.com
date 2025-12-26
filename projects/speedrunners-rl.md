@@ -14,29 +14,35 @@ status: active
 
 ## Overview
 
-A modular reinforcement learning system for SpeedRunners that uses direct C++ DLL injection to hook into the game process, exposing a Gymnasium-compatible environment for training agents like Rainbow IQN and RND.
+Most reinforcement learning research happens in sanitized sandboxes, simulators built specifically for AI. Real-world software isn't so accommodating. This project bridges that gap by injecting a custom AI interface directly into *SpeedRunners*, a fast-paced multiplayer platformer. It uses C++ DLL injection and shared memory to turn a closed-source commercial game into a high-performance Gym environment, enabling agents to train using state-of-the-art algorithms like Rainbow IQN.
 
-<div class="video-showcase">
-  <div class="media-placeholder" style="aspect-ratio: 16/9; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; border-radius: 1rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);">
-    <div style="text-align: center; color: #94a3b8; padding: 2rem;">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto 1rem;">
-        <polygon points="23 7 16 12 23 17 23 7"></polygon>
-        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-      </svg>
-      <p>Agent gameplay video coming soon</p>
-    </div>
-  </div>
-  <p class="video-caption">Trained agent demonstration (in production)</p>
-</div>
+## What is SpeedRunners?
 
-## The Challenge
+[*SpeedRunners*](https://store.steampowered.com/app/207140/SpeedRunners/) is a competitive side-scrolling platformer where 4 players race to outrun each other. The core mechanic is unique: the camera follows the leader, and anyone who falls off-screen is eliminated.
 
-SpeedRunners has no public API, and screen capture is too slow for high-FPS reinforcement learning. The solution required:
+To survive, players must master a complex physics system involving grappling hooks, wall jumps, and boost management. It's not just a race; it's a battle. You can use items like missiles and crates to trip up opponents, and the screen shrinks over time to force a confrontation.
 
-1. **Reverse Engineering**: Understanding game memory layout
-2. **DLL Injection**: Hooking into the game process
-3. **Real-Time IPC**: Named pipes for 60Hz state streaming
-4. **Minimal Latency**: < 16ms per frame (60 FPS)
+- **Elimination Mechanics**: Falling behind the camera means instant death.
+- **Physics-Based Movement**: Momentum is key. Grappling hooks allow for high-speed swings and shortcuts.
+- **Round-Based**: Matches are best-of-3 (or best-of-4 for teams).
+- **RPG Elements**: Players earn experience to unlock new items and skins, adding a layer of progression.
+
+## Why This Matters for AI
+
+SpeedRunners presents a "perfect storm" of challenges for an AI agent:
+
+- **Adversarial Real-Time Physics**: Unlike turn-based games, decisions must be made in milliseconds (16ms per frame at 60 FPS).
+- **Continuous Action Space**: While inputs are digital, the timing and duration of button presses create a effectively continuous control problem.
+- **Partially Observable**: You can't see the whole map. You only see what's on screen, requiring the agent to memorize level layouts and anticipate opponent moves.
+- **No API**: The game has no built-in AI interface. We had to build one from scratch by reverse-engineering the game's memory.
+
+## The Engineering Challenge
+
+Because *SpeedRunners* is a compiled commercial game, it doesn't have a Python API. To train an agent, we had to build a bridge:
+
+1.  **Reverse Engineering**: We used tools like Cheat Engine and IDA Pro to find the memory addresses for player position, velocity, and game state.
+2.  **DLL Injection**: We wrote a custom C++ library that gets "injected" into the running game process. This allows us to read memory directly and overwrite input commands.
+3.  **High-Speed Inter-Process Communication (IPC)**: The C++ hook talks to our Python training script via named pipes, streaming state data at 60Hz with less than 10ms of latency.
 
 ## Architecture Overview
 
