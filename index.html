@@ -132,7 +132,11 @@ title: Home
           </div>
 
           <div class="project-media">
-            {% if project.image %}
+            {% if project.video %}
+            <video autoplay loop muted playsinline loading="lazy">
+              <source src="{{ project.video }}" type="video/mp4">
+            </video>
+            {% elsif project.image %}
             <img src="{{ project.image }}" alt="{{ project.name }}" loading="lazy">
             {% else %}
             <div class="media-placeholder"></div>

@@ -18,6 +18,7 @@ featured:
 
   - name: "Terra Mystica RL"
     slug: "terramystica-rl"
+    video: "/assets/videos/terra-mystica-sample-game.mp4"
     image: "/assets/images/projects/terramystica.png"
     tagline: "High-performance board game AI environment"
     description: "A rules-complete implementation of Terra Mystica in Rust, exposed as a PettingZoo/PyTorch RL environment via PyO3."
@@ -37,6 +38,7 @@ featured:
 
   - name: "HLRL"
     slug: "hlrl"
+    video: "/assets/videos/rl-video-episode-5.mp4"
     tagline: "Modular reinforcement learning library"
     description: "A from-scratch RL library with state-of-the-art algorithms and flexible wrapper-based architecture."
     tech:
@@ -48,7 +50,7 @@ featured:
       - "SAC, DQN, IQN, RND, Ape-X, R2D2 algorithms"
       - "Wrapper-based composition for mixing algorithms"
       - "Backend-agnostic core abstractions"
-      - "Distributed training support"
+      - "Single-machine high-performance training"
     status: "maintained"
 
   - name: "SpeedRunners RL"
