@@ -14,7 +14,7 @@ status: active
 
 ## Overview
 
-A rules-complete implementation of the complex board game *Terra Mystica* in Rust, exposed as a PettingZoo/PyTorch RL environment via PyO3. This project enables training of multi-agent systems capable of long-term strategic planning in one of the most complex board games ever created.
+Board games have long been the proving ground for Artificial Intelligence. While Chess and Go have fallen to superhuman algorithms, modern "Euro-style" board games present a new frontier. This project brings [*Terra Mystica*](https://boardgamegeek.com/boardgame/120677/terra-mystica), a masterpiece of zero luck and perfect information, into the realm of deep reinforcement learning. It is a rules-complete, high-performance environment written in Rust, designed to push the boundaries of multi-agent planning.
 
 <div class="video-showcase">
   <video controls loop muted autoplay>
@@ -24,15 +24,29 @@ A rules-complete implementation of the complex board game *Terra Mystica* in Rus
   <p class="video-caption">Sample AI game playthrough</p>
 </div>
 
-## Why Terra Mystica?
+## What is Terra Mystica?
 
-Terra Mystica is an ideal testbed for multi-agent reinforcement learning:
+At its heart, *Terra Mystica* is an economic engine-building game played on a shared hex map. 2 to 5 players each control a unique fantasy faction (like Witches, Giants, or Nomads) and attempt to terraform the landscape to suit their needs.
 
-- **Strategic Depth**: Hundreds of possible actions each turn
-- **Long-term Planning**: Games last 6 rounds with compounding decisions
-- **Multi-Agent Dynamics**: 2-5 players with asymmetric factions
-- **Hidden Information**: Resource management and opponent modeling
-- **Combinatorial Complexity**: Exponential action space
+The goal is deceptively simple: score the most Victory Points (VP) by the end of Round 6. However, getting there requires navigating a tight economy. You must upgrade buildings to generate income (workers, money, priests), but expanding your territory requires spending those same resources. The game is famous for having **zero luck**. There are no dice and no card draws. Every outcome is the direct result of player decisions.
+
+## Why This Matters for AI
+
+For an AI researcher, Terra Mystica is fascinating because it breaks the molds we're used to. It combines the deterministic purity of Go with the heterogeneous asymmetry of a modern video game.
+
+- **Deep Asymmetry**: The agent can't just learn "how to play"; it must learn how to play *as* 14 distinct factions, each with unique abilities, costs, and starting positions.
+- **Tight Resource Coupling**: Resources in Terra Mystica are deeply interdependent. You aren't just optimizing one metric; you're balancing a complex equation where spending a "Priest" now might cost you a "Spade" three turns later.
+- **The "Power" Mechanic**: The game features a unique resource called "Power" that is gained when opponents build next to you. This creates a fascinating spatial tension: you *want* to be near opponents to leach off their actions, but being too close chokes your physical expansion.
+
+### Beyond Chess: The N-Player Challenge
+
+We often think of game theory through the lens of the [Minimax](https://en.wikipedia.org/wiki/Minimax) algorithm, where if I win, you lose. This holds true for 2-player zero-sum games like Chess. But Terra Mystica is usually played with 3 to 5 players, and that changes the theoretical landscape entirely.
+
+In an N-player setting, the standard "my gain is your loss" assumption breaks down. A move that hurts the leader might benefit a third party more than the actor. This introduces complex dynamics:
+
+*   **The Multiplayer Zero-Sum Problem**: Traditional algorithms like AlphaZero are optimized for binary outcomes. Adapting them to handle the relative value of actions in a group setting is a significant open challenge.
+*   **[Kingmaking](https://en.wikipedia.org/wiki/Kingmaker_scenario)**: Agents must learn to navigate scenarios where a losing player's actions effectively decide the winner among the remaining contenders. This is a common phenomenon in multiplayer board games that is theoretically distinct from optimal play in 2-player settings.
+*   **Unstable [Nash Equilibria](https://en.wikipedia.org/wiki/Nash_equilibrium)**: Unlike 2-player equilibria which are generally stable, N-player equilibria can be cyclical or highly sensitive to opponent policy variations.
 
 ## Architecture
 
