@@ -24,7 +24,7 @@ To survive, players must master a complex physics system involving grappling hoo
 
 - **Elimination Mechanics**: Falling behind the camera means instant death.
 - **Physics-Based Movement**: Momentum is key. Grappling hooks allow for high-speed swings and shortcuts.
-- **Round-Based**: Matches are best-of-3 (or best-of-4 for teams).
+- **Round-Based**: Matches are typically best-of-3.
 - **RPG Elements**: Players earn experience to unlock new items and skins, adding a layer of progression.
 
 ## Why This Matters for AI
