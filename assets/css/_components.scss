@@ -97,7 +97,7 @@
   @extend .btn-ghost;
   padding: $space-sm;
 
-  @media (min-width: $screen-md) {
+  @media (min-width: $screen-lg) {
     display: none;
   }
 }

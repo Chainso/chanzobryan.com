@@ -20,6 +20,73 @@ body {
   position: relative;
 }
 
+// Mobile Header
+.mobile-header {
+  display: none;
+  
+  @media (max-width: $screen-lg) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 $space-lg;
+    z-index: $z-fixed + 10; // Above sidebar
+    box-shadow: $shadow-sm;
+  }
+
+  .mobile-logo {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: $font-bold;
+
+    .logo-image {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    padding: $space-xs;
+    cursor: pointer;
+
+    span {
+      width: 24px;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: all $transition-fast;
+    }
+    
+    &[aria-expanded="true"] {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+}
+
 // Sidebar
 .sidebar {
   position: fixed;
@@ -37,6 +104,8 @@ body {
   @media (max-width: $screen-lg) {
     transform: translateX(-100%);
     transition: transform $transition-base;
+    top: 64px; // Below mobile header
+    border-top: 1px solid var(--border-color); // Visual separation if needed
 
     &.open {
       transform: translateX(0);
@@ -118,37 +187,6 @@ body {
     display: flex;
     justify-content: center;
   }
-
-  .mobile-menu-toggle {
-    display: none;
-    position: fixed;
-    top: $space-lg;
-    left: $space-lg;
-    z-index: $z-modal;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: $radius-md;
-    padding: $space-sm;
-    cursor: pointer;
-    transition: all $transition-fast;
-
-    @media (max-width: $screen-lg) {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    span {
-      width: 24px;
-      height: 2px;
-      background-color: var(--text-primary);
-      transition: all $transition-fast;
-    }
-
-    &:hover {
-      background-color: var(--bg-tertiary);
-    }
-  }
 }
 
 .sidebar-overlay {
@@ -157,6 +195,7 @@ body {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: calc(#{$z-fixed} - 1);
+  top: 64px; // Below mobile header
 
   @media (max-width: $screen-lg) {
     .sidebar.open ~ & {
@@ -179,6 +218,7 @@ body {
 
   @media (max-width: $screen-lg) {
     margin-left: 0;
+    padding-top: 64px; // Spacing for mobile header
   }
 }
 

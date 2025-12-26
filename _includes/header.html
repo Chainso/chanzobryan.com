@@ -1,3 +1,15 @@
+<header class="mobile-header">
+  <a href="{{ '/' | relative_url }}" class="mobile-logo">
+    <img src="/assets/images/profile.jpg" alt="Chanzo Bryan" class="logo-image">
+    <span class="logo-name">Chanzo Bryan</span>
+  </a>
+  <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
 <aside class="sidebar">
   <div class="sidebar-content">
     <a href="{{ '/' | relative_url }}" class="sidebar-logo">
@@ -46,12 +58,6 @@
       {% include theme-toggle.html %}
     </div>
   </div>
-
-  <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
 </aside>
 
 <div class="sidebar-overlay"></div>
