@@ -12,7 +12,7 @@ github: https://github.com/Chainso/HLRL
 
 ## Overview
 
-Most reinforcement learning libraries are either too simple for real research or so complex that they're impossible to modify. HLRL was built to solve this. It's a modular, from-scratch reinforcement learning library designed to make high-performance algorithms accessible and easy to experiment with. Whether you're training a simple agent to balance a pole or training a complex agent to solve a board game on your local machine, HLRL provides the building blocks to get it done.
+Most [reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learning) libraries are either too simple for real research or so complex that they're impossible to modify. HLRL was built to solve this. It's a modular, from-scratch reinforcement learning library designed to make high-performance algorithms accessible and easy to experiment with. Whether you're training a simple agent to balance a pole or training a complex agent to solve a board game on your local machine, HLRL provides the building blocks to get it done.
 
 <div class="video-showcase">
   <video controls loop muted autoplay>

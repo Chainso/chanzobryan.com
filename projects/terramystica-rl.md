@@ -40,9 +40,9 @@ For an AI researcher, Terra Mystica is fascinating because it breaks traditional
 
 ### Beyond Chess: The N-Player Challenge
 
-I often think of game theory through the lens of the [Minimax](https://en.wikipedia.org/wiki/Minimax) algorithm, where if I win, you lose. This holds true for 2-player zero-sum games like Chess. But Terra Mystica is usually played with 3 to 5 players, and that changes the theoretical landscape entirely.
+Game theory is often thought of through the lens of the [Minimax](https://en.wikipedia.org/wiki/Minimax) algorithm, where if one player wins, another loses. This holds true for 2-player [zero-sum games](https://en.wikipedia.org/wiki/Zero-sum_game) like Chess. But Terra Mystica is usually played with 3 to 5 players, and that changes the theoretical landscape entirely.
 
-In an N-player setting, the standard "my gain is your loss" assumption breaks down. A move that hurts the leader might benefit a third party more than the actor. This introduces complex dynamics:
+In an N-player setting, the standard "your loss is my gain" assumption breaks down. A move that hurts the leader might benefit a third party more than the actor. This introduces complex dynamics:
 
 *   **The Multiplayer Zero-Sum Problem**: Traditional algorithms like AlphaZero are optimized for binary outcomes. Adapting them to handle the relative value of actions in a group setting is a significant open challenge.
 *   **[Kingmaking](https://en.wikipedia.org/wiki/Kingmaker_scenario)**: Agents must learn to navigate scenarios where a losing player's actions effectively decide the winner among the remaining contenders. This is a common phenomenon in multiplayer board games that is theoretically distinct from optimal play in 2-player settings.
