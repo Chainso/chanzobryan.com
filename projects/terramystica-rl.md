@@ -1,6 +1,7 @@
 ---
 layout: project
 title: Terra Mystica RL
+hero_image: /assets/images/projects/terramystica.png
 tagline: High-performance board game AI environment
 tech:
   - Rust

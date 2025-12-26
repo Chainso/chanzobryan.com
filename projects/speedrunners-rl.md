@@ -1,6 +1,7 @@
 ---
 layout: project
 title: SpeedRunners RL
+hero_image: /assets/images/projects/speedrunners.png
 tagline: Deep RL agents playing SpeedRunners via direct game injection
 tech:
   - Python

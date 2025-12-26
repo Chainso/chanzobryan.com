@@ -710,6 +710,20 @@
     padding-bottom: $space-3xl;
     border-bottom: 1px solid var(--border-color);
 
+    .project-hero-image {
+      margin-bottom: $space-2xl;
+      border-radius: $radius-xl;
+      overflow: hidden;
+      box-shadow: $shadow-xl;
+      max-height: 400px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
     .project-badges {
       display: flex;
       justify-content: center;

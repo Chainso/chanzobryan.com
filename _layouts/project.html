@@ -17,6 +17,12 @@ layout: default
 
     <!-- Project header -->
     <header class="project-header">
+      {% if page.hero_image or page.image %}
+      <div class="project-hero-image">
+        <img src="{{ page.hero_image | default: page.image }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+
       <div class="project-badges">
         {% for tech in page.tech limit:3 %}
         <span class="badge badge-tech">{{ tech }}</span>
