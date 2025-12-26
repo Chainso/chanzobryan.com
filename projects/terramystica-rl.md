@@ -10,7 +10,6 @@ tech:
   - PettingZoo
   - PyTorch
 github: https://github.com/Chainso/terramystica-rl
-status: active
 ---
 
 ## Overview
@@ -33,7 +32,7 @@ The goal is deceptively simple: score the most Victory Points (VP) by the end of
 
 ## Why This Matters for AI
 
-For an AI researcher, Terra Mystica is fascinating because it breaks the molds we're used to. It combines the deterministic purity of Go with the heterogeneous asymmetry of a modern video game.
+For an AI researcher, Terra Mystica is fascinating because it breaks traditional molds. It combines the deterministic purity of Go with the heterogeneous asymmetry of a modern video game.
 
 - **Deep Asymmetry**: The agent can't just learn "how to play"; it must learn how to play *as* 14 distinct factions, each with unique abilities, costs, and starting positions.
 - **Tight Resource Coupling**: Resources in Terra Mystica are deeply interdependent. You aren't just optimizing one metric; you're balancing a complex equation where spending a "Priest" now might cost you a "Spade" three turns later.
@@ -41,7 +40,7 @@ For an AI researcher, Terra Mystica is fascinating because it breaks the molds w
 
 ### Beyond Chess: The N-Player Challenge
 
-We often think of game theory through the lens of the [Minimax](https://en.wikipedia.org/wiki/Minimax) algorithm, where if I win, you lose. This holds true for 2-player zero-sum games like Chess. But Terra Mystica is usually played with 3 to 5 players, and that changes the theoretical landscape entirely.
+I often think of game theory through the lens of the [Minimax](https://en.wikipedia.org/wiki/Minimax) algorithm, where if I win, you lose. This holds true for 2-player zero-sum games like Chess. But Terra Mystica is usually played with 3 to 5 players, and that changes the theoretical landscape entirely.
 
 In an N-player setting, the standard "my gain is your loss" assumption breaks down. A move that hurts the leader might benefit a third party more than the actor. This introduces complex dynamics:
 
@@ -49,124 +48,15 @@ In an N-player setting, the standard "my gain is your loss" assumption breaks do
 *   **[Kingmaking](https://en.wikipedia.org/wiki/Kingmaker_scenario)**: Agents must learn to navigate scenarios where a losing player's actions effectively decide the winner among the remaining contenders. This is a common phenomenon in multiplayer board games that is theoretically distinct from optimal play in 2-player settings.
 *   **Unstable [Nash Equilibria](https://en.wikipedia.org/wiki/Nash_equilibrium)**: Unlike 2-player equilibria which are generally stable, N-player equilibria can be cyclical or highly sensitive to opponent policy variations.
 
-## Architecture
+## Learn More
 
-<div class="features-grid">
-  <div class="feature-item">
-    <h4>Rust Core Engine</h4>
-    <p>Zero-cost abstractions for maximum performance - 100k+ steps/second</p>
-  </div>
-  <div class="feature-item">
-    <h4>PyO3 Bridge</h4>
-    <p>Seamless Python bindings for ML frameworks</p>
-  </div>
-  <div class="feature-item">
-    <h4>PettingZoo API</h4>
-    <p>Compatible with all major RL libraries</p>
-  </div>
-  <div class="feature-item">
-    <h4>Pygame Visualization</h4>
-    <p>Debug and analyze games with rich graphics</p>
-  </div>
+To dive deeper into the code, architecture, and implementation details, check out the project on GitHub:
+
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://github.com/Chainso/terramystica-rl" target="_blank" class="btn btn-primary">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    View Source on GitHub
+  </a>
 </div>
-
-## Technical Implementation
-
-### State Representation
-
-The game board is represented as a multi-channel tensor suitable for CNNs:
-
-```python
-from terra_mystica_rl import TerraMysticaEnv
-
-env = TerraMysticaEnv(num_players=4)
-observation = env.reset()
-
-# Observation shape: (num_features, board_height, board_width)
-# Features include: terrain types, buildings, power bowls, resources
-```
-
-### Action Space
-
-Actions are encoded as categorical distributions over:
-- Building placement (location + building type)
-- Terrain transformation
-- Special abilities
-- Power actions
-- Favor tiles and bonuses
-
-### Reward Shaping
-
-The environment supports multiple reward modes:
-- **Sparse**: Victory points at game end only
-- **Incremental**: VP gains throughout the game
-- **Potential-Based**: Shaped rewards for intermediate progress
-
-## Performance Metrics
-
-<div class="tech-stack">
-  <span class="tech-item">120,000 steps/second (CPU)</span>
-  <span class="tech-item">60+ unit tests</span>
-  <span class="tech-item">95%+ code coverage</span>
-  <span class="tech-item">Zero unsafe Rust</span>
-</div>
-
-## Example: Training an Agent
-
-```python
-from terra_mystica_rl import TerraMysticaEnv
-from hlrl import PPOAgent
-import torch
-
-# Create environment
-env = TerraMysticaEnv(num_players=2)
-
-# Initialize agent
-agent = PPOAgent(
-    observation_space=env.observation_space,
-    action_space=env.action_space,
-    hidden_dims=[256, 256]
-)
-
-# Train
-for episode in range(1000):
-    obs = env.reset()
-    done = False
-
-    while not done:
-        action = agent.act(obs)
-        obs, reward, done, info = env.step(action)
-        agent.learn(obs, action, reward, done)
-```
-
-## Challenges Solved
-
-1. **Memory Efficiency**: Rust's ownership model enables zero-copy data sharing
-2. **Parallelization**: Thread-safe environment for distributed training
-3. **Correctness**: Comprehensive test suite validates game rules
-4. **Speed**: Compiled Rust is 50-100x faster than Python implementations
-
-## Technology Stack
-
-<div class="tech-stack">
-  <span class="tech-item">Rust 1.70+</span>
-  <span class="tech-item">PyO3 0.19</span>
-  <span class="tech-item">Python 3.8+</span>
-  <span class="tech-item">PettingZoo</span>
-  <span class="tech-item">Pygame (visualization)</span>
-  <span class="tech-item">NumPy</span>
-</div>
-
-## Current Results
-
-Early experiments show promising results:
-- Agents learn basic building strategies within 100k games
-- Faction selection strategies emerge around 500k games
-- Advanced resource optimization appears after 1M+ games
-
-## Future Directions
-
-- **Self-Play Training**: Iterative policy improvement
-- **Transfer Learning**: Pre-train on simpler variants
-- **AlphaZero-style Search**: Combine RL with MCTS
-- **Multi-Task Learning**: Train on multiple board game environments simultaneously

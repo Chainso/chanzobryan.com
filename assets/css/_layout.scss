@@ -204,10 +204,11 @@ main {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: $space-lg;
+    gap: $space-xl;
 
     @media (max-width: $screen-md) {
       flex-direction: column;
+      align-items: center;
       text-align: center;
     }
   }
@@ -220,31 +221,32 @@ main {
     }
   }
 
-  .footer-right {
+  .footer-contact {
     display: flex;
-    gap: $space-lg;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: $space-md;
+    align-items: center;
+    text-align: center;
 
     @media (max-width: $screen-md) {
-      justify-content: center;
+      align-items: center;
     }
 
-    a {
+    h4 {
       font-size: $text-sm;
-      color: var(--text-secondary);
-      transition: color $transition-fast;
-
-      &:hover {
-        color: var(--accent);
-      }
+      font-weight: $font-bold;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin: 0;
     }
 
-    .footer-resume {
-      color: var(--accent);
-      font-weight: $font-medium;
+    .footer-links {
+      display: flex;
+      gap: $space-md;
 
-      &:hover {
-        color: var(--accent-hover);
+      @media (max-width: $screen-md) {
+        margin-left: 0;
       }
     }
   }
@@ -269,10 +271,15 @@ main {
 
 // Section
 .section {
-  margin-bottom: $space-4xl;
+  margin-bottom: $space-3xl;
 
   .section-header {
     margin-bottom: $space-2xl;
+
+    .accent-slash {
+      color: var(--accent);
+      margin-right: $space-sm;
+    }
 
     h2 {
       margin-bottom: $space-sm;

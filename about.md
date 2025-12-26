@@ -44,7 +44,7 @@ All my [personal projects](/projects) are playgrounds for experimenting with new
 Some highlights:
 
 - **Terra Mystica RL**: A Rust-based reinforcement learning environment for the board game Terra Mystica
-- **Splice**: A mobile app using AI to help plan group activities
+- **Splice**: An AI-powered bill splitting mobile app for groups
 - **HLRL**: A high-level reinforcement learning library for Python
 - **SpeedRunners AI**: Deep RL agents that learned to play SpeedRunners
 

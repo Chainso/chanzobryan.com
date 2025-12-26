@@ -12,7 +12,6 @@ tech:
   - Supabase
   - PostgreSQL
 github: https://github.com/Chainso/splice
-status: active
 ---
 
 ## Overview
@@ -23,123 +22,17 @@ Bill splitting is a solved problem, but it's rarely a seamless one. Most apps re
 
 Splice is a mobile expense tracker designed for groups. Whether you're living with roommates or traveling with friends, the app provides a single source of truth for who owes what.
 
-The standout feature is the AI-powered receipt scanner. Instead of typing in every item from a long grocery bill, you simply take a photo. The app uses [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) (OCR) and large language models to identify items, prices, and tax, then lets you assign them to people with a single tap. It handles the math, the currency conversions, and the notifications so you don't have to.
+The standout feature is the AI-powered receipt scanner. Instead of typing in every item from a long grocery bill, you simply take a photo. The app uses [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) (OCR AI) to identify items, prices, and tax, then lets you assign them to people with a single tap. It handles the math so you don't have to.
 
-## Technical Architecture
+## Learn More
 
-### Frontend (React Native + Expo)
+To dive deeper into the code, architecture, and implementation details, check out the project on GitHub:
 
-```typescript
-// Example: Real-time expense updates
-import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase'
-
-export function useExpenses(groupId: string) {
-  const [expenses, setExpenses] = useState([])
-
-  useEffect(() => {
-    // Subscribe to real-time changes
-    const channel = supabase
-      .channel('expenses')
-      .on('postgres_changes',
-        { event: '*', schema: 'public', table: 'expenses' },
-        (payload) => setExpenses(prev => [...prev, payload.new])
-      )
-      .subscribe()
-
-    return () => supabase.removeChannel(channel)
-  }, [groupId])
-
-  return expenses
-}
-```
-
-### Backend (Supabase)
-
-The backend leverages Supabase's full capabilities:
-
-- **PostgreSQL**: Relational data with JSONB for flexible schemas
-- **Row Level Security**: User-specific data access policies
-- **Edge Functions**: Serverless API endpoints for receipt processing
-- **Real-time**: WebSocket subscriptions for live updates
-
-### Database Schema
-
-```sql
--- Groups table
-CREATE TABLE groups (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  name TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
--- Expenses table with RLS
-CREATE TABLE expenses (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  group_id UUID REFERENCES groups(id),
-  amount DECIMAL(10, 2) NOT NULL,
-  description TEXT,
-  receipt_url TEXT,
-  splits JSONB NOT NULL,
-  created_by UUID REFERENCES auth.users(id),
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
--- Enable RLS
-ALTER TABLE expenses ENABLE ROW LEVEL SECURITY;
-
--- Policy: Users can only see expenses in their groups
-CREATE POLICY "Users see own group expenses"
-ON expenses FOR SELECT
-USING (group_id IN (
-  SELECT group_id FROM group_members
-  WHERE user_id = auth.uid()
-));
-```
-
-## Technology Stack
-
-<div class="tech-stack">
-  <span class="tech-item">TypeScript</span>
-  <span class="tech-item">React Native</span>
-  <span class="tech-item">Expo 49</span>
-  <span class="tech-item">Supabase</span>
-  <span class="tech-item">PostgreSQL</span>
-  <span class="tech-item">React Navigation</span>
-  <span class="tech-item">Zustand (state)</span>
-  <span class="tech-item">React Native Paper</span>
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://github.com/Chainso/splice" target="_blank" class="btn btn-primary">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    View Source on GitHub
+  </a>
 </div>
-
-## Features in Detail
-
-### Receipt Scanning Pipeline
-
-1. **Camera Capture**: Native camera module captures receipt image
-2. **OCR Processing**: Supabase Edge Function calls OpenAI Vision API
-3. **Data Extraction**: Structured JSON with items, prices, totals
-4. **User Confirmation**: Editable form before saving
-5. **Split Calculation**: Automatic per-person breakdown
-
-### Real-Time Collaboration
-
-Multiple users can split bills simultaneously with instant updates:
-- **Optimistic UI**: Changes appear immediately
-- **Conflict Resolution**: Last-write-wins with change tracking
-- **Presence Indicators**: See who's currently viewing
-- **Change Notifications**: Toast alerts for group updates
-
-## Design Philosophy
-
-The app is built on the principle that the best interface is no interface. Splice aims to automate as much of the bill splitting process as possible. The core user flow is designed to be completed in just three taps: scan the receipt, confirm the items, and finish. By using Material Design 3 and native animations, the app feels lightweight and responsive, hiding the complexity of the backend sync and AI processing.
-
-## Performance
-
-Mobile performance is about more than just frame rates. It is about how quickly a user can go from an idea to an action:
-
-- **Optimistic UI**: When you add an expense, it appears on your screen instantly while the background sync handles the network request.
-- **Efficient OCR**: Image processing happens in the cloud to keep the local app bundle small and the battery usage low.
-- **Native Experience**: By using React Native with the Hermes engine, the app achieves sub-second start times even on older hardware.
-
-## Future Enhancements
-
-The vision for Splice is to move beyond just tracking and into settlement. Upcoming features include direct integration with payment providers like Venmo and PayPal, multi-currency support for international travel, and deeper spending analytics to help groups understand their habits over time.

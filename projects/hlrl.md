@@ -7,7 +7,6 @@ tech:
   - PyTorch
   - Reinforcement Learning
 github: https://github.com/Chainso/HLRL
-status: maintained
 ---
 
 ## Overview
@@ -37,59 +36,15 @@ In the world of AI research, the ability to iterate quickly is everything. HLRL 
 - **From Scratch implementation**: Every algorithm in the library was implemented from the ground up. This ensured a deep understanding of the math and allowed for optimizations that are often missed in generic frameworks.
 - **Research-Grade Exploration**: It includes advanced techniques like [Random Network Distillation](https://openai.com/index/reinforcement-learning-with-prediction-errors-for-intrinsic-motivation/) (RND), which allows agents to develop a "sense of curiosity" and explore environments without explicit rewards.
 
-## Technical Architecture
+## Learn More
 
-The library is built around three core concepts:
+To dive deeper into the code, architecture, and implementation details, check out the project on GitHub:
 
-1. **Agents**: Encapsulate learning algorithms and decision-making logic
-2. **Wrappers**: Modify agent behavior through composition (similar to Gym wrappers)
-3. **Trainers**: Orchestrate training loops and experience collection
-
-### Example Usage
-
-```python
-from hlrl.torch.agents import DQNAgent
-from hlrl.core.wrappers import PrioritizedReplayWrapper
-from hlrl.trainers import OffPolicyTrainer
-
-# Create a DQN agent with prioritized experience replay
-agent = DQNAgent(state_dim=4, action_dim=2, hidden_dim=64)
-agent = PrioritizedReplayWrapper(agent, alpha=0.6, beta=0.4)
-
-# Train the agent
-trainer = OffPolicyTrainer(agent, env)
-trainer.train(total_timesteps=100000)
-```
-
-## Technology Stack
-
-<div class="tech-stack">
-  <span class="tech-item">Python 3.8+</span>
-  <span class="tech-item">PyTorch</span>
-  <span class="tech-item">NumPy</span>
-  <span class="tech-item">Gymnasium</span>
+<div style="text-align: center; margin: 2rem 0;">
+  <a href="https://github.com/Chainso/HLRL" target="_blank" class="btn btn-primary">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+    </svg>
+    View Source on GitHub
+  </a>
 </div>
-
-## Performance
-
-Speed is a feature in reinforcement learning. The faster an environment runs, the more "experience" an agent can gather in a given hour. HLRL is built for efficiency:
-
-- **Atari Games**: It matches or exceeds the standard DQN baseline on over 40 games.
-- **Continuous Control**: It provides stable learning on MuJoCo and other physics-based environments.
-- **High Throughput**: By using optimized PyTorch kernels, it can reach over 100k steps per second on modern hardware.
-
-<div class="video-showcase">
-  <video controls loop muted>
-    <source src="/assets/videos/rl-video-episode-3.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <p class="video-caption">Testing an agent on a variety of classic control tasks</p>
-</div>
-
-## Design Philosophy
-
-The core of HLRL is a commitment to clarity. I believe that research code should be readable first and optimized second. Every component is designed to be swapped or extended. If you want to try a new type of replay buffer or a custom loss function, you shouldn't have to fight the framework to do it.
-
-## Current Status
-
-HLRL is an active project and is regularly updated with new research. Recent additions include RND for exploration and R2D2 for recurrent training. It's battle-tested across several of my other projects, including the Terra Mystica and SpeedRunners AI environments.
