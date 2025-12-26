@@ -14,7 +14,7 @@ status: active
 
 ## Overview
 
-Most reinforcement learning research happens in sanitized sandboxes, simulators built specifically for AI. Real-world software isn't so accommodating. This project bridges that gap by injecting a custom AI interface directly into *SpeedRunners*, a fast-paced multiplayer platformer. It uses C++ DLL injection and shared memory to turn a closed-source commercial game into a high-performance Gym environment, enabling agents to train using state-of-the-art algorithms like Rainbow IQN.
+Most reinforcement learning research happens in sanitized sandboxes, simulators built specifically for AI. Real-world software isn't so accommodating. This project bridges that gap by injecting a custom AI interface directly into *SpeedRunners*, a fast-paced multiplayer platformer. It uses C++ [DLL injection](https://en.wikipedia.org/wiki/DLL_injection) and shared memory to turn a closed-source commercial game into a high-performance Gym environment, enabling agents to train using state-of-the-art algorithms like Rainbow IQN.
 
 ## What is SpeedRunners?
 
@@ -39,7 +39,7 @@ SpeedRunners presents a "perfect storm" of challenges for an AI agent:
 
 Because *SpeedRunners* is a compiled commercial game, it doesn't have a Python API. To train an agent, we had to build a bridge:
 
-1.  **Reverse Engineering**: We used tools like Cheat Engine and IDA Pro to find the memory addresses for player position, velocity, and game state.
+1.  **[Reverse Engineering](https://en.wikipedia.org/wiki/Reverse_engineering#Reverse_engineering_of_software)**: We used tools like Cheat Engine and IDA Pro to find the memory addresses for player position, velocity, and game state.
 2.  **DLL Injection**: We wrote a custom C++ library that gets "injected" into the running game process. This allows us to read memory directly and overwrite input commands.
 3.  **High-Speed Inter-Process Communication (IPC)**: The C++ hook talks to our Python training script via named pipes, streaming state data at 60Hz with less than 10ms of latency.
 
