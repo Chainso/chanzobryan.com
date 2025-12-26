@@ -2,6 +2,8 @@
 layout: project
 title: Splice
 hero_image: /assets/images/projects/splice.png
+hero_fit: contain
+hero_background: "#ffffff"
 tagline: AI-powered bill splitting mobile app
 tech:
   - TypeScript

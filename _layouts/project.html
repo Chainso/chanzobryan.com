@@ -19,8 +19,8 @@ layout: default
     <header class="project-header">
       {% if page.hero_image or page.image %}
       <div class="project-hero">
-        <div class="project-hero-image">
-          <img src="{{ page.hero_image | default: page.image }}" alt="{{ page.title }}">
+        <div class="project-hero-image" style="{% if page.hero_background %}background-color: {{ page.hero_background }};{% endif %}">
+          <img src="{{ page.hero_image | default: page.image }}" alt="{{ page.title }}" style="{% if page.hero_fit %}object-fit: {{ page.hero_fit }};{% endif %}">
           <div class="project-hero-overlay"></div>
         </div>
         
