@@ -22,15 +22,6 @@ Splice is a mobile expense tracker designed for groups. Whether you're living wi
 
 The standout feature is the AI-powered receipt scanner. Instead of typing in every item from a long grocery bill, you simply take a photo. The app uses [Optical Character Recognition](https://en.wikipedia.org/wiki/Optical_character_recognition) (OCR) and large language models to identify items, prices, and tax, then lets you assign them to people with a single tap. It handles the math, the currency conversions, and the notifications so you don't have to.
 
-## Why This Matters
-
-While it looks like a simple utility, the engineering behind Splice addresses several complex mobile development challenges:
-
-- **Real-Time Collaboration**: Using [Supabase](https://supabase.com/) and PostgreSQL, the app synchronized state across multiple devices instantly. If one person updates a split, everyone else sees it in under 100 milliseconds.
-- **Offline-First Design**: Mobile users have spotty connections. Splice uses optimistic updates and local caching to ensure the app stays responsive even when you're in a basement bar with no service.
-- **AI Integration**: The receipt scanning pipeline isn't just a simple API call. It involves image optimization, prompt engineering for structured data extraction, and a robust verification flow to ensure 100% accuracy.
-- **Security and Privacy**: Handling financial data requires a "security first" mindset. The app implements Row Level Security (RLS) at the database level, ensuring that users can only ever see data from groups they actually belong to.
-
 ## Technical Architecture
 
 ### Frontend (React Native + Expo)
