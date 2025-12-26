@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +20,7 @@
     (function() {
       const saved = localStorage.getItem('theme');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = saved || (prefersDark ? 'dark' : 'light');
+      const theme = saved || (prefersDark ? 'dark' : 'dark'); // Default to dark
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
@@ -33,6 +33,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
 </head>
 <body>
+  <!-- Background grid pattern -->
+  <div class="bg-grid"></div>
+
   {% include header.html %}
 
   <div class="main-wrapper">

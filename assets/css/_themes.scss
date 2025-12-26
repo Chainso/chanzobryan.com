@@ -9,10 +9,14 @@
   --bg-tertiary: #{$light-bg-tertiary};
   --text-primary: #{$light-text-primary};
   --text-secondary: #{$light-text-secondary};
-  --text-tertiary: #{$light-text-tertiary};
+  --text-muted: #{$light-text-muted};
   --border-color: #{$light-border};
   --accent: #{$light-accent};
+  --accent-secondary: #{$light-accent-secondary};
   --accent-hover: #{$light-accent-hover};
+
+  // RGB values for glassmorphism effects
+  --bg-secondary-rgb: 248, 250, 252;
 
   // Shadow opacity varies by theme
   --shadow-opacity: 0.1;
@@ -24,10 +28,14 @@
   --bg-tertiary: #{$dark-bg-tertiary};
   --text-primary: #{$dark-text-primary};
   --text-secondary: #{$dark-text-secondary};
-  --text-tertiary: #{$dark-text-tertiary};
+  --text-muted: #{$dark-text-muted};
   --border-color: #{$dark-border};
   --accent: #{$dark-accent};
+  --accent-secondary: #{$dark-accent-secondary};
   --accent-hover: #{$dark-accent-hover};
+
+  // RGB values for glassmorphism effects
+  --bg-secondary-rgb: 15, 23, 42;
 
   --shadow-opacity: 0.3;
 }
@@ -68,4 +76,19 @@ body,
     background-color $transition-base,
     color $transition-base,
     border-color $transition-base;
+}
+
+// Utility Classes
+.text-gradient {
+  background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(var(--bg-secondary-rgb), 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
 }

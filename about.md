@@ -10,17 +10,7 @@ description: Software engineer passionate about AI, systems, and building things
 
 ## Hey there!
 
-I’m a Senior Software Engineer at Netflix.
-
-To get a TV show or movie from initial ideation all the way to being live on the service, there's a gargantuan amount of work involved. From securing contracts with talent, script writing, and getting the green light, to filming, post-production, localization, and marketing; there are dozens of domains involved that are large enough to have their own teams and organizations.
-
-The one common thread connecting these distinct domains is the need to broadcast and react to new activity on the titles they are actively working on.
-
-When a script is complete, we want to start localization as fast as possible. When footage has been shot and uploaded, we want to ensure creative workstations are ready for VFX artists. When the footage for a show has gone through post-production, we want to make sure that marketing is aware so that they can use the assets for marketing material.
-
-This happens across multiple projects simultaneously, involving a massive flow of critical information required to streamline the creation of a show or movie.
-
-**What I do is provide the infrastructure that underpins this communication, whether that be from system to system, system to person, or person to person.** I build the event bus that lets the rest of the business freely send and receive these signals at a scale of billions of events per day, allowing us to audit and react to how the business is evolving.
+I build scalable distributed systems and create AI that plays games. Passionate about reinforcement learning, performance optimization, and elegant solutions to complex problems.
 
 ## Background
 

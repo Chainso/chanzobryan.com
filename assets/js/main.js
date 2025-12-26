@@ -155,6 +155,40 @@
     });
   }
 
+  // Scroll animations with Intersection Observer
+  function initScrollAnimations() {
+    // Check if browser supports Intersection Observer
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: just show all elements
+      const elements = document.querySelectorAll('.fade-in-section');
+      elements.forEach(function(el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Optionally unobserve after animating in
+          // observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in sections
+    const fadeInElements = document.querySelectorAll('.fade-in-section');
+    fadeInElements.forEach(function(el) {
+      observer.observe(el);
+    });
+  }
+
   // Initialize all features
   function init() {
     initMobileMenu();
@@ -163,6 +197,7 @@
     initExternalLinks();
     initLazyLoad();
     initCodeCopy();
+    initScrollAnimations();
   }
 
   // Run on DOM ready
