@@ -2,6 +2,8 @@ featured:
   - name: "Splice"
     slug: "splice"
     image: "/assets/images/projects/splice.png"
+    image_fit: "contain"
+    image_background: "#ffffff"
     tagline: "AI-powered bill splitting mobile app"
     description: "A React Native app for expense tracking with AI-powered receipt scanning and real-time sync."
     tech:

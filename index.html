@@ -131,13 +131,13 @@ title: Home
             </span>
           </div>
 
-          <div class="project-media">
+          <div class="project-media" style="{% if project.image_background %}background-color: {{ project.image_background }};{% endif %}">
             {% if project.video %}
             <video autoplay loop muted playsinline loading="lazy">
               <source src="{{ project.video }}" type="video/mp4">
             </video>
             {% elsif project.image %}
-            <img src="{{ project.image }}" alt="{{ project.name }}" loading="lazy">
+            <img src="{{ project.image }}" alt="{{ project.name }}" loading="lazy" style="{% if project.image_fit %}object-fit: {{ project.image_fit }};{% endif %}">
             {% else %}
             <div class="media-placeholder"></div>
             {% endif %}
