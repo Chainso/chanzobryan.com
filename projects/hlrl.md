@@ -12,7 +12,7 @@ status: maintained
 
 ## Overview
 
-Most reinforcement learning libraries are either too simple for real research or so complex that they're impossible to modify. HLRL was built to solve this. It's a modular, from-scratch reinforcement learning library designed to make high-performance algorithms accessible and easy to experiment with. Whether you're training a simple agent to balance a pole or orchestrating a distributed swarm of agents to solve a complex board game, HLRL provides the building blocks to get it done.
+Most reinforcement learning libraries are either too simple for real research or so complex that they're impossible to modify. HLRL was built to solve this. It's a modular, from-scratch reinforcement learning library designed to make high-performance algorithms accessible and easy to experiment with. Whether you're training a simple agent to balance a pole or training a complex agent to solve a board game on your local machine, HLRL provides the building blocks to get it done.
 
 <div class="video-showcase">
   <video controls loop muted autoplay>
@@ -33,7 +33,7 @@ Unlike many libraries that treat algorithms as black boxes, HLRL uses a unique w
 In the world of AI research, the ability to iterate quickly is everything. HLRL is designed with a few key principles in mind:
 
 - **Algorithm Composition**: Instead of monolithic classes, HLRL uses small, reusable components. You can mix a [DQN](https://deepmind.google/discover/blog/dqn-and-the-future-of-ai/) agent with a recurrent memory wrapper and an [IQN](https://arxiv.org/abs/1806.06923) distributional head as easily as putting together LEGO bricks.
-- **Distributed by Default**: Scaling up training often requires complex infrastructure. HLRL integrates with [Ray](https://www.ray.io/) to provide out-of-the-box support for distributed training, allowing you to run hundreds of parallel actors across a cluster.
+- **Single-Machine Performance**: Rather than relying on expensive clusters, HLRL is optimized to extract every bit of performance from a single workstation. It uses efficient data structures and asynchronous sampling to keep the GPU saturated.
 - **From Scratch implementation**: Every algorithm in the library was implemented from the ground up. This ensured a deep understanding of the math and allowed for optimizations that are often missed in generic frameworks.
 - **Research-Grade Exploration**: It includes advanced techniques like [Random Network Distillation](https://openai.com/index/reinforcement-learning-with-prediction-errors-for-intrinsic-motivation/) (RND), which allows agents to develop a "sense of curiosity" and explore environments without explicit rewards.
 
@@ -68,7 +68,6 @@ trainer.train(total_timesteps=100000)
   <span class="tech-item">PyTorch</span>
   <span class="tech-item">NumPy</span>
   <span class="tech-item">Gymnasium</span>
-  <span class="tech-item">Ray (for distributed training)</span>
 </div>
 
 ## Performance
@@ -93,4 +92,4 @@ The core of HLRL is a commitment to clarity. I believe that research code should
 
 ## Current Status
 
-HLRL is an active project and is regularly updated with new research. Recent additions include RND for exploration and R2D2 for recurrent distributed training. It's battle-tested across several of my other projects, including the Terra Mystica and SpeedRunners AI environments.
+HLRL is an active project and is regularly updated with new research. Recent additions include RND for exploration and R2D2 for recurrent training. It's battle-tested across several of my other projects, including the Terra Mystica and SpeedRunners AI environments.
