@@ -32,6 +32,7 @@ featured:
   - name: "HLRL"
     slug: "hlrl"
     video: "/assets/videos/rl-video-episode-5.mp4"
+    image: "/assets/images/projects/hlrl.jpg"
     tagline: "Modular reinforcement learning library"
     description: "A from-scratch RL library implementing state-of-the-art algorithms including SAC, DQN, IQN, RND, Ape-X, and R2D2. Features a flexible wrapper-based architecture that allows algorithms to be composed and mixed, with backend-agnostic core abstractions for portability. Optimized for single-machine high-performance training without sacrificing code clarity."
     tech:

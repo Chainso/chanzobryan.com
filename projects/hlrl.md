@@ -1,6 +1,7 @@
 ---
 layout: project
 title: HLRL
+hero_image: /assets/images/projects/hlrl.jpg
 tagline: Modular reinforcement learning library
 tech:
   - Python
