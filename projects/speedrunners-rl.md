@@ -27,7 +27,7 @@ To survive, players must master a complex physics system involving grappling hoo
 
 ## Why This Matters for AI
 
-SpeedRunners presents a "perfect storm" of challenges for an AI agent:
+SpeedRunners presents a perfect storm of challenges for an AI agent:
 
 - **Adversarial Real-Time Physics**: Unlike turn-based games, decisions must be made in milliseconds (16ms per frame at 60 FPS).
 - **Continuous Action Space**: While inputs are digital, the timing and duration of button presses create a effectively continuous control problem.
@@ -39,7 +39,7 @@ SpeedRunners presents a "perfect storm" of challenges for an AI agent:
 Because *SpeedRunners* is a compiled commercial game, it doesn't have a Python API. To train an agent, a bridge was required:
 
 1.  **[Reverse Engineering](https://en.wikipedia.org/wiki/Reverse_engineering#Reverse_engineering_of_software)**: Cheat Engine and IDA Pro were used to find the memory addresses for player position, velocity, and game state.
-2.  **[DLL Injection](https://en.wikipedia.org/wiki/DLL_injection)**: A custom C++ library was written that gets "injected" into the running game process. This allows the system to read memory directly and overwrite input commands.
+2.  **[DLL Injection](https://en.wikipedia.org/wiki/DLL_injection)**: A custom C++ library was written that gets injected into the running game process. This allows the system to read memory directly and overwrite input commands.
 3.  **High-Speed Inter-Process Communication (IPC)**: The C++ hook talks to the Python training script via named pipes, streaming state data at 60Hz with less than 10ms of latency.
 
 ## Learn More

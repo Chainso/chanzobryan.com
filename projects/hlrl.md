@@ -24,7 +24,7 @@ Most [reinforcement learning](https://en.wikipedia.org/wiki/Reinforcement_learni
 
 ## What is HLRL?
 
-HLRL, short for High-Level Reinforcement Learning, is a framework for building and training AI agents. It handles the "heavy lifting" of reinforcement learning, like managing neural networks, experience replay buffers, and complex optimization loops.
+HLRL, short for High-Level Reinforcement Learning, is a framework for building and training AI agents. It handles the heavy lifting of reinforcement learning, like managing neural networks, experience replay buffers, and complex optimization loops.
 
 Unlike many libraries that treat algorithms as black boxes, HLRL uses a unique wrapper-based architecture. This means you can take a standard algorithm and "wrap" it with new features, like prioritized memory or curiosity-driven exploration, without rewriting the core code. It's a system built for composition and flexibility.
 
@@ -35,7 +35,7 @@ In the world of AI research, the ability to iterate quickly is everything. HLRL 
 - **Algorithm Composition**: Instead of monolithic classes, HLRL uses small, reusable components. You can mix a [DQN](https://deepmind.google/discover/blog/dqn-and-the-future-of-ai/) agent with a recurrent memory wrapper and an [IQN](https://arxiv.org/abs/1806.06923) distributional head as easily as putting together LEGO bricks.
 - **Single-Machine Performance**: Rather than relying on expensive clusters, HLRL is optimized to extract every bit of performance from a single workstation. It uses efficient data structures and asynchronous sampling to keep the GPU saturated.
 - **From Scratch implementation**: Every algorithm in the library was implemented from the ground up. This ensured a deep understanding of the math and allowed for optimizations that are often missed in generic frameworks.
-- **Research-Grade Exploration**: It includes advanced techniques like [Random Network Distillation](https://openai.com/index/reinforcement-learning-with-prediction-errors-for-intrinsic-motivation/) (RND), which allows agents to develop a "sense of curiosity" and explore environments without explicit rewards.
+- **Research-Grade Exploration**: It includes advanced techniques like [Random Network Distillation](https://openai.com/index/reinforcement-learning-with-prediction-errors-for-intrinsic-motivation/) (RND), which allows agents to develop a sense of curiosity and explore environments without explicit rewards.
 
 ## Learn More
 

@@ -14,7 +14,7 @@ github: https://github.com/Chainso/terramystica-rl
 
 ## Overview
 
-Board games have long been the proving ground for Artificial Intelligence. While Chess and Go have fallen to superhuman algorithms, modern "Euro-style" board games present a new frontier. This project brings [*Terra Mystica*](https://boardgamegeek.com/boardgame/120677/terra-mystica), a masterpiece of zero luck and perfect information, into the realm of deep reinforcement learning. It is a rules-complete, high-performance environment written in Rust, designed to push the boundaries of multi-agent planning.
+Board games have long been the proving ground for Artificial Intelligence. While Chess and Go have fallen to superhuman algorithms, modern Euro-style board games present a new frontier. This project brings [*Terra Mystica*](https://boardgamegeek.com/boardgame/120677/terra-mystica), a masterpiece of zero luck and perfect information, into the realm of deep reinforcement learning. It is a rules-complete, high-performance environment written in Rust, designed to push the boundaries of multi-agent planning.
 
 <div class="video-showcase">
   <video controls loop muted autoplay>
@@ -34,7 +34,7 @@ The goal is deceptively simple: score the most Victory Points (VP) by the end of
 
 For an AI researcher, Terra Mystica is fascinating because it breaks traditional molds. It combines the deterministic purity of Go with the heterogeneous asymmetry of a modern video game.
 
-- **Deep Asymmetry**: The agent can't just learn "how to play"; it must learn how to play *as* 14 distinct factions, each with unique abilities, costs, and starting positions.
+- **Deep Asymmetry**: The agent can't just learn how to play once; it must learn how to play *as* 14 distinct factions, each with unique abilities, costs, and starting positions.
 - **Tight Resource Coupling**: Resources in Terra Mystica are deeply interdependent. You aren't just optimizing one metric; you're balancing a complex equation where spending a "Priest" now might cost you a "Spade" three turns later.
 - **The "Power" Mechanic**: The game features a unique resource called "Power" that is gained when opponents build next to you. This creates a fascinating spatial tension: you *want* to be near opponents to leach off their actions, but being too close chokes your physical expansion.
 
