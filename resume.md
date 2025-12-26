@@ -26,7 +26,7 @@ When a script is complete, we want to start localization as fast as possible. Wh
 
 This happens across multiple projects simultaneously, involving a massive flow of critical information required to streamline the creation of a show or movie.
 
-What I do is provide the infrastructure that underpins this communication, whether that be from system to system, system to person, or person to person. I build the event bus that lets the rest of the business freely send and receive these signals at a scale of billions of events per day, allowing us to audit and react to how the business is evolving.
+**What I do is provide the infrastructure that underpins this communication, whether that be from system to system, system to person, or person to person.** I build the event bus that lets the rest of the business freely send and receive these signals at a scale of billions of events per day, allowing us to audit and react to how the business is evolving.
 
 ---
 
