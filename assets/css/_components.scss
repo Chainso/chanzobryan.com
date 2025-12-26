@@ -574,26 +574,31 @@
     .project-media {
       flex: 1;
       min-width: 300px;
+      overflow: hidden;
+      border-radius: $radius-xl;
+      box-shadow: $shadow-xl;
+      aspect-ratio: 16 / 9;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-tertiary);
 
-      img {
+      img, video {
         width: 100%;
-        height: auto;
-        border-radius: $radius-xl;
-        box-shadow: $shadow-xl;
-        transition: transform $transition-base, box-shadow $transition-base;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform $transition-base;
       }
 
       .media-placeholder {
         width: 100%;
-        aspect-ratio: 16 / 9;
+        height: 100%;
         background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
-        border-radius: $radius-xl;
-        box-shadow: $shadow-xl;
       }
     }
 
-    &:hover .project-media img {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    &:hover .project-media img,
+    &:hover .project-media video {
+      transform: scale(1.02);
     }
 
     .project-link-cta {
