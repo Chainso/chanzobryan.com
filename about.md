@@ -10,7 +10,7 @@ description: Software engineer passionate about AI, systems, and building things
 
 ## Hey there!
 
-I build scalable distributed systems and create AI that plays games. Passionate about reinforcement learning, performance optimization, and elegant solutions to complex problems.
+I build scalable distributed systems and create AI to master games. Passionate about reinforcement learning, performance optimization, and elegant solutions to complex problems.
 
 ## Background
 
