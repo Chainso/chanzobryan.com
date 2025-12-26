@@ -117,14 +117,6 @@ title: Home
             <p class="project-tagline">{{ project.tagline }}</p>
             <p class="project-description">{{ project.description }}</p>
 
-            {% if project.highlights %}
-            <div class="spec-grid">
-              {% for highlight in project.highlights limit:4 %}
-              <div class="spec-card">{{ highlight }}</div>
-              {% endfor %}
-            </div>
-            {% endif %}
-
             <span class="project-link-cta">
               View Project Details →
             </span>
