@@ -18,7 +18,7 @@ social:
 
 # Feature flags
 features:
-  blog_enabled: false
+  blog_enabled: true
   analytics_enabled: false
   contact_form_enabled: true
 

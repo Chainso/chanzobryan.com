@@ -1,4 +1,17 @@
 featured:
+  - name: "Prophet"
+    slug: "prophet"
+    image: "/assets/images/projects/prophet.png"
+    image_fit: "contain"
+    image_background: "#ffffff"
+    tagline: "Ontology-first backend scaffolding across Java, Node, and Python"
+    description: "A multi-stack code generation platform that compiles a single domain ontology into SQL, OpenAPI, and framework-specific integration code. Prophet reduces contract drift by generating typed actions, query APIs, persistence adapters, and migration artifacts with deterministic outputs and compatibility checks."
+    tech:
+      - RDF
+      - Ontology
+      - Polyglot
+    github: "https://github.com/Chainso/prophet"
+
   - name: "Splice"
     slug: "splice"
     image: "/assets/images/projects/splice.png"
@@ -12,7 +25,6 @@ featured:
       - Expo
       - Supabase
     website: "https://getspliceapp.com"
-    status: "active"
 
   - name: "Terra Mystica RL"
     slug: "terramystica-rl"
@@ -27,7 +39,6 @@ featured:
       - PettingZoo
       - PyTorch
     github: "https://github.com/Chainso/terramystica-rl"
-    status: "active"
 
   - name: "HLRL"
     slug: "hlrl"
@@ -40,7 +51,6 @@ featured:
       - PyTorch
     github: "https://github.com/Chainso/HLRL"
     stars: 3
-    status: "maintained"
 
   - name: "SpeedRunners RL"
     slug: "speedrunners-rl"
@@ -54,4 +64,3 @@ featured:
       - Gymnasium
       - HLRL
     github: "https://github.com/Chainso/speedrunners-rl"
-    status: "active"

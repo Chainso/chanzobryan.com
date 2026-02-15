@@ -129,7 +129,12 @@
 
     codeBlocks.forEach(function(block) {
       const pre = block.parentElement;
+      const container = pre.closest('.highlighter-rouge') || pre;
+
+      if (container.querySelector('.copy-code-btn')) return;
+
       const button = document.createElement('button');
+      button.type = 'button';
       button.className = 'copy-code-btn';
       button.textContent = 'Copy';
       button.setAttribute('aria-label', 'Copy code to clipboard');
@@ -150,8 +155,8 @@
         }
       });
 
-      pre.style.position = 'relative';
-      pre.appendChild(button);
+      container.classList.add('code-copy-container');
+      container.appendChild(button);
     });
   }
 

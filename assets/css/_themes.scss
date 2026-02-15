@@ -14,6 +14,20 @@
   --accent: #{$light-accent};
   --accent-secondary: #{$light-accent-secondary};
   --accent-hover: #{$light-accent-hover};
+  --code-bg: #f8fafc;
+  --code-bg-alt: #eef2ff;
+  --code-border: rgba(148, 163, 184, 0.45);
+  --code-text: #0f172a;
+  --code-muted: #64748b;
+  --code-accent: #0369a1;
+  --code-string: #166534;
+  --code-symbol: #7c3aed;
+  --code-number: #b45309;
+  --code-button-bg: rgba(255, 255, 255, 0.92);
+  --code-button-border: rgba(148, 163, 184, 0.8);
+  --code-button-text: #0f172a;
+  --code-button-hover-bg: #eff6ff;
+  --code-button-hover-text: #0369a1;
 
   // RGB values for glassmorphism effects
   --bg-secondary-rgb: 248, 250, 252;
@@ -33,6 +47,20 @@
   --accent: #{$dark-accent};
   --accent-secondary: #{$dark-accent-secondary};
   --accent-hover: #{$dark-accent-hover};
+  --code-bg: #0b1220;
+  --code-bg-alt: #111827;
+  --code-border: rgba(51, 65, 85, 0.75);
+  --code-text: #e2e8f0;
+  --code-muted: #94a3b8;
+  --code-accent: #7dd3fc;
+  --code-string: #86efac;
+  --code-symbol: #f9a8d4;
+  --code-number: #fcd34d;
+  --code-button-bg: rgba(15, 23, 42, 0.88);
+  --code-button-border: rgba(148, 163, 184, 0.5);
+  --code-button-text: #e2e8f0;
+  --code-button-hover-bg: rgba(2, 6, 23, 0.95);
+  --code-button-hover-text: #7dd3fc;
 
   // RGB values for glassmorphism effects
   --bg-secondary-rgb: 15, 23, 42;

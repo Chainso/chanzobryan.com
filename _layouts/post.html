@@ -4,28 +4,41 @@ layout: default
 <article class="post">
   <header class="post-header">
     <div class="container">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="post-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%B %-d, %Y" }}
-        </time>
-        {% if page.author %}
-        <span class="post-author">by {{ page.author }}</span>
-        {% endif %}
-        {% if page.tags %}
-        <div class="post-tags">
-          {% for tag in page.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
+      {% if page.image %}
+      <figure class="post-cover">
+        <img src="{{ page.image }}" alt="{{ page.title }} cover image">
+      </figure>
+      {% endif %}
+
+      <div class="post-header-inner">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %-d, %Y" }}
+          </time>
+          {% if page.reading_time %}
+          <span class="reading-time">{{ page.reading_time }} min read</span>
+          {% endif %}
+          {% if page.author %}
+          <span class="post-author">by {{ page.author }}</span>
+          {% endif %}
+          {% if page.tags %}
+          <div class="post-tags">
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
       </div>
     </div>
   </header>
 
   <div class="post-content">
     <div class="container">
-      {{ content }}
+      <div class="post-content-body">
+        {{ content }}
+      </div>
     </div>
   </div>
 

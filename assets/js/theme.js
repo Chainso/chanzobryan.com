@@ -14,9 +14,8 @@
       return saved;
     }
 
-    // Use system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    return prefersDark ? THEME_DARK : THEME_LIGHT;
+    // Default to dark unless user has explicitly saved a preference
+    return THEME_DARK;
   }
 
   // Set theme
@@ -45,14 +44,9 @@
 
   // Listen for system theme changes
   function watchSystemTheme() {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-    mediaQuery.addEventListener('change', function(e) {
-      // Only update if user hasn't manually set a preference
-      if (!localStorage.getItem(THEME_KEY)) {
-        setTheme(e.matches ? THEME_DARK : THEME_LIGHT);
-      }
-    });
+    // No-op by design: this site intentionally defaults to dark and
+    // should not switch themes based on OS preference changes.
+    return;
   }
 
   // Initialize on DOM ready
