@@ -954,10 +954,9 @@
   gap: $space-xl;
 }
 
-.blog-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: $space-xl;
+#blog .posts-list {
+  max-width: 100%;
+  margin: 0;
 }
 
 .post-card {
@@ -965,6 +964,7 @@
   display: grid;
   gap: $space-lg;
   padding: $space-lg;
+  cursor: pointer;
   background: linear-gradient(
     160deg,
     rgba(var(--bg-secondary-rgb), 0.95) 0%,
@@ -993,6 +993,24 @@
     border-color: var(--accent);
   }
 
+  &:focus-within {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+    border-color: var(--accent);
+  }
+
+  .post-card-hitbox {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    border-radius: inherit;
+  }
+
+  .post-card-hitbox:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
   .post-card-media {
     display: block;
     border-radius: $radius-lg;
@@ -1001,11 +1019,6 @@
     background-color: var(--bg-primary);
     aspect-ratio: 16 / 10;
     transition: transform $transition-base, border-color $transition-fast;
-
-    &:hover {
-      transform: scale(1.01);
-      border-color: var(--accent);
-    }
 
     img {
       width: 100%;
@@ -1026,15 +1039,7 @@
     h3 {
       margin-bottom: $space-sm;
       line-height: $leading-tight;
-
-      a {
-        color: var(--text-primary);
-        text-decoration: none;
-      }
-
-      a:hover {
-        color: var(--accent);
-      }
+      color: var(--text-primary);
     }
   }
 
@@ -1075,12 +1080,19 @@
   .read-more {
     color: var(--accent);
     font-weight: $font-semibold;
-    text-decoration: none;
     margin-top: auto;
+    margin-bottom: 0;
   }
 
-  .read-more:hover {
+  &:hover .read-more,
+  &:focus-within .read-more {
     color: var(--accent-hover);
+  }
+
+  &:hover .post-card-media,
+  &:focus-within .post-card-media {
+    transform: scale(1.01);
+    border-color: var(--accent);
   }
 }
 
@@ -1090,10 +1102,6 @@
   @media (max-width: $screen-md) {
     grid-template-columns: 1fr;
   }
-}
-
-.post-card-preview {
-  grid-template-columns: 1fr;
 }
 
 [data-theme="light"] {

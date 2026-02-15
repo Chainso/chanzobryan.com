@@ -193,7 +193,10 @@ The practical shift is this: treat the business model as a real engineering arti
 
 If this approach resonates, start with the repository docs and run one of the sample stacks locally.
 
-<div style="text-align: center; margin: 2rem 0;">
+<div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin: 2rem 0;">
+  <a href="/projects/prophet/" class="btn btn-ghost">
+    View Project Page
+  </a>
   <a href="https://github.com/Chainso/prophet" target="_blank" class="btn btn-primary">
     View Prophet on GitHub
   </a>
