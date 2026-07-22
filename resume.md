@@ -16,17 +16,11 @@ description: Work experience, education, and professional background
 
 ## About
 
-I'm a Senior Software Engineer at Netflix.
+I'm a Member of Technical Staff at OpenAI.
 
-To get a TV show or movie from initial ideation all the way to being live on the service, there's a gargantuan amount of work involved. From securing contracts with talent, script writing, and getting the green light, to filming, post-production, localization, and marketing; there are dozens of domains involved that are large enough to have their own teams and organizations.
+Before OpenAI, I spent nearly four years at Netflix building the activity logging and eventing infrastructure behind critical content and studio workflows. I led cross-functional platform initiatives, designed systems that handled billions of records, and helped engineers adopt AI in their daily work.
 
-The one common thread connecting these distinct domains is the need to broadcast and react to new activity on the titles they are actively working on.
-
-When a script is complete, we want to start localization as fast as possible. When footage has been shot and uploaded, we want to ensure creative workstations are ready for VFX artists. When the footage for a show has gone through post-production, we want to make sure that marketing is aware so that they can use the assets for marketing material.
-
-This happens across multiple projects simultaneously, involving a massive flow of critical information required to streamline the creation of a show or movie.
-
-**What I do is provide the infrastructure that underpins this communication, whether that be from system to system, system to person, or person to person.** I build the event bus that lets the rest of the business freely send and receive these signals at a scale of billions of events per day, allowing us to audit and react to how the business is evolving.
+I care about ambitious products, scalable systems, and tools that make difficult work feel simple.
 
 ---
 

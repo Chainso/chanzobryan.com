@@ -1,8 +1,13 @@
+- company: OpenAI
+  role: Member of Technical Staff (Software Engineer)
+  period: "April 2026 - Present"
+  description: "At OpenAI, I build the infrastructure that moves files into and out of ChatGPT securely and at scale."
+
 - company: Netflix
   role: Senior Software Engineer
-  period: "July 2022 - Present"
+  period: "July 2022 - April 2026"
   location: "Los Gatos, CA"
-  description: "Lead the product vision and architectural strategy for my organization's activity logging and eventing ecosystems, fostering cross-functional alignment to unify core content and studio infrastructure into cohesive products that accelerate critical business workflows that underpin the launching of Netflix shows."
+  description: "Led the product vision and architectural strategy for my organization's activity logging and eventing ecosystems, fostering cross-functional alignment to unify core content and studio infrastructure into cohesive products that accelerated critical business workflows behind the launch of Netflix shows."
   highlights:
     - "Spearheaded a data-driven, domain-level initiative to architect a centralized activity logging platform from scratch, forging cross-functional partnerships with 6+ teams to define a unified auditing strategy for the organization."
     - "De-risked an imminent long-term infrastructure outage by engineering a novel Elasticsearch indexing strategy to ingest 3B+ documents daily, reducing the incident rate to 0%."
