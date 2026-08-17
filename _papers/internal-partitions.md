@@ -5,7 +5,7 @@ date: 2026-08-11 00:00:00 -0700
 author: Chanzo Bryan
 kind: paper
 reading_time: 5
-pdf_url: /papers/internal-partitions.pdf
+pdf_url: /papers/Quadratically_Large_Regular_Graphs_Without_Internal_Partitions.pdf
 image: /assets/images/papers/internal-partitions-k5.png
 image_alt: "The k = 5 construction: an independent set W, five adjacent twin pairs, and the clique C. Every vertex in W connects to every twin-pair vertex, and each pair connects to three consecutive vertices of C."
 description: "Quadratic-size counterexamples to Ban and Linial's proposed linear threshold for internal partitions."
