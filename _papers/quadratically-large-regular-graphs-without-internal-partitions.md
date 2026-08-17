@@ -21,4 +21,31 @@ tags:
 
 ## Abstract
 
-An internal partition of a graph is a nontrivial bipartition in which each vertex has at least as many neighbors in its own part as in the other part. In <a href="https://doi.org/10.1002/jgt.21909" target="_blank" rel="noopener"><em>Internal Partitions of Regular Graphs</em></a> (2016), Ban and Linial proposed in Conjecture 4 that every 2k-regular graph on at least 4k vertices has an internal partition. We disprove Conjecture 4 at its proposed threshold. For every odd integer k ≥ 5, we construct a 2k-regular graph on exactly (k + 2)(k + 1)/2 vertices with no internal partition. For every even integer k ≥ 8, we construct a 2k-regular graph on exactly k(k + 1)/2 + 2 vertices with no internal partition. Both constructions also have connected complements. In fact, for each graph, every red-blue coloring in which each vertex has at least k neighbors of its own color is monochromatic.
+<p>
+  An internal partition of a graph is a nontrivial bipartition in which each vertex has at least as many neighbors in its own part as in the other part. In <a href="https://doi.org/10.1002/jgt.21909" target="_blank" rel="noopener"><em>Internal Partitions of Regular Graphs</em></a> (2016), Ban and Linial proposed in Conjecture 4 that every
+  <span class="math-term"><math display="inline" class="math-inline" aria-label="2 k"><mn>2</mn><mo>&#x2062;</mo><mi>k</mi></math>&#8209;regular</span> graph on at least
+  <math display="inline" class="math-inline" aria-label="4 k"><mn>4</mn><mo>&#x2062;</mo><mi>k</mi></math> vertices has an internal partition. We disprove Conjecture 4 at its proposed threshold. For every odd integer
+  <math display="inline" class="math-inline" aria-label="k is at least 5"><mi>k</mi><mo>&#x2265;</mo><mn>5</mn></math>, we construct a
+  <span class="math-term"><math display="inline" class="math-inline" aria-label="2 k"><mn>2</mn><mo>&#x2062;</mo><mi>k</mi></math>&#8209;regular</span> graph on exactly
+  <math display="inline" class="math-inline math-binomial" aria-label="k plus 2 choose 2">
+    <mrow>
+      <mo>(</mo>
+      <mfrac linethickness="0"><mrow><mi>k</mi><mo>+</mo><mn>2</mn></mrow><mn>2</mn></mfrac>
+      <mo>)</mo>
+    </mrow>
+  </math>
+  vertices with no internal partition. For every even integer
+  <math display="inline" class="math-inline" aria-label="k is at least 8"><mi>k</mi><mo>&#x2265;</mo><mn>8</mn></math>, we construct a
+  <span class="math-term"><math display="inline" class="math-inline" aria-label="2 k"><mn>2</mn><mo>&#x2062;</mo><mi>k</mi></math>&#8209;regular</span> graph on exactly
+  <math display="inline" class="math-inline math-binomial" aria-label="k plus 1 choose 2, plus 2">
+    <mrow>
+      <mo>(</mo>
+      <mfrac linethickness="0"><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac>
+      <mo>)</mo>
+      <mo>+</mo>
+      <mn>2</mn>
+    </mrow>
+  </math>
+  vertices with no internal partition. Both constructions also have connected complements. In fact, for each graph, every red-blue coloring in which each vertex has at least
+  <math display="inline" class="math-inline" aria-label="k"><mi>k</mi></math> neighbors of its own color is monochromatic.
+</p>

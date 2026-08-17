@@ -1265,6 +1265,20 @@
     font-size: $text-lg;
     line-height: 1.85;
   }
+
+  .math-inline {
+    color: inherit;
+    font-family: "Noto Sans Math", "STIX Two Math", "Cambria Math", serif;
+    font-size: 1em;
+  }
+
+  .math-binomial {
+    margin-inline: 0.08em;
+  }
+
+  .math-term {
+    white-space: nowrap;
+  }
 }
 
 [data-theme="light"] {
