@@ -13,7 +13,7 @@ excerpt: "Quadratic-size counterexamples to Ban and Linial's proposed linear thr
 summary: >-
   An internal partition splits a graph into two nonempty groups so that every vertex has at least as many neighbors on its own side as across the split. These constructions grow quadratically with degree, disproving Ban and Linial's proposed linear threshold.
 deck: >-
-  Ban and Linial conjectured that every 2<i>k</i>-regular graph with at least 4<i>k</i> vertices has an internal partition. This paper gives counterexamples whose size grows quadratically with <i>k</i>.
+  <a href="https://doi.org/10.1002/jgt.21909" target="_blank" rel="noopener">Ban and Linial conjectured</a> that every 2<i>k</i>-regular graph with at least 4<i>k</i> vertices has an internal partition. This paper gives counterexamples whose size grows quadratically with <i>k</i>.
 tags:
   - Graph Theory
   - Combinatorics
