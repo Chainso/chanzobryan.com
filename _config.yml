@@ -46,6 +46,9 @@ plugins:
 collections:
   projects:
     output: false
+  papers:
+    output: true
+    permalink: /papers/:name/
 
 # Exclude from build
 exclude:

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">The k equals 5 construction</title>
+  <desc id="desc">Three groups: W, five twin pairs P zero through P four, and a five-vertex clique C. W connects to every vertex in every pair. P zero connects to c zero, c one, and c two; P one connects to c one, c two, and c three; the later pairs follow the same shift.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-light" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .text { font-family: Inter, "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .muted { fill: #64748b; }
+      .heading { font-size: 30px; font-weight: 650; text-anchor: middle; }
+      .small { font-size: 20px; }
+      .node-label { font-size: 18px; font-weight: 650; text-anchor: middle; dominant-baseline: middle; }
+      .node { fill: #ffffff; stroke: #334155; stroke-width: 2.5; }
+      .node-highlight { fill: #eff6ff; stroke: #2563eb; stroke-width: 3; }
+      .edge { fill: none; stroke: #334155; stroke-width: 2.4; stroke-linecap: round; }
+      .edge-highlight { fill: none; stroke: #2563eb; stroke-width: 3; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#ffffff"/>
+
+  <text x="72" y="86" class="text" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="700">The <tspan font-style="italic">k</tspan> = 5 construction</text>
+  <line x1="72" y1="126" x2="1528" y2="126" stroke="#e2e8f0" stroke-width="2"/>
+
+  <!-- Group labels -->
+  <text x="260" y="205" class="text heading">W</text>
+  <text x="800" y="205" class="text heading">Twin pairs</text>
+  <text x="1330" y="205" class="text heading">C</text>
+
+  <!-- Quiet column guides -->
+  <line x1="520" y1="178" x2="520" y2="900" stroke="#e2e8f0" stroke-width="1.5"/>
+  <line x1="1070" y1="178" x2="1070" y2="900" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- W -->
+  <g aria-label="Six vertices in W with no edges between them">
+    <g transform="translate(175 350)"><circle r="25" class="node"/><text class="text node-label">w₀</text></g>
+    <g transform="translate(345 350)"><circle r="25" class="node"/><text class="text node-label">w₁</text></g>
+    <g transform="translate(175 510)"><circle r="25" class="node"/><text class="text node-label">w₂</text></g>
+    <g transform="translate(345 510)"><circle r="25" class="node"/><text class="text node-label">w₃</text></g>
+    <g transform="translate(175 670)"><circle r="25" class="node"/><text class="text node-label">w₄</text></g>
+    <g transform="translate(345 670)"><circle r="25" class="node"/><text class="text node-label">w₅</text></g>
+  </g>
+
+  <!-- W to pair group: the only bundled connection -->
+  <g aria-label="Every W vertex connects to every vertex in the five pairs">
+    <line x1="445" y1="510" x2="595" y2="510" class="edge" marker-end="url(#arrow)"/>
+    <text x="520" y="477" class="text small" font-weight="650" text-anchor="middle">all-to-all</text>
+  </g>
+
+  <!-- Five pairs. P0 is highlighted only to show the repeated C-connection rule. -->
+  <g aria-label="Five twin pairs P zero through P four">
+    <g transform="translate(800 320)">
+      <rect x="-126" y="-35" width="252" height="70" rx="35" fill="none" stroke="#2563eb" stroke-width="2"/>
+      <line x1="-52" y1="0" x2="52" y2="0" class="edge-highlight"/>
+      <circle cx="-76" cy="0" r="22" class="node-highlight"/><circle cx="76" cy="0" r="22" class="node-highlight"/>
+      <text x="-76" y="0" class="text node-label">x₀</text><text x="76" y="0" class="text node-label">y₀</text>
+      <text x="-155" y="7" class="text small" font-weight="650" text-anchor="end">P₀</text>
+    </g>
+
+    <g transform="translate(800 430)">
+      <line x1="-52" y1="0" x2="52" y2="0" class="edge"/>
+      <circle cx="-76" cy="0" r="22" class="node"/><circle cx="76" cy="0" r="22" class="node"/>
+      <text x="-76" y="0" class="text node-label">x₁</text><text x="76" y="0" class="text node-label">y₁</text>
+      <text x="-155" y="7" class="text small" font-weight="650" text-anchor="end">P₁</text>
+    </g>
+
+    <g transform="translate(800 540)">
+      <line x1="-52" y1="0" x2="52" y2="0" class="edge"/>
+      <circle cx="-76" cy="0" r="22" class="node"/><circle cx="76" cy="0" r="22" class="node"/>
+      <text x="-76" y="0" class="text node-label">x₂</text><text x="76" y="0" class="text node-label">y₂</text>
+      <text x="-155" y="7" class="text small" font-weight="650" text-anchor="end">P₂</text>
+    </g>
+
+    <g transform="translate(800 650)">
+      <line x1="-52" y1="0" x2="52" y2="0" class="edge"/>
+      <circle cx="-76" cy="0" r="22" class="node"/><circle cx="76" cy="0" r="22" class="node"/>
+      <text x="-76" y="0" class="text node-label">x₃</text><text x="76" y="0" class="text node-label">y₃</text>
+      <text x="-155" y="7" class="text small" font-weight="650" text-anchor="end">P₃</text>
+    </g>
+
+    <g transform="translate(800 760)">
+      <line x1="-52" y1="0" x2="52" y2="0" class="edge"/>
+      <circle cx="-76" cy="0" r="22" class="node"/><circle cx="76" cy="0" r="22" class="node"/>
+      <text x="-76" y="0" class="text node-label">x₄</text><text x="76" y="0" class="text node-label">y₄</text>
+      <text x="-155" y="7" class="text small" font-weight="650" text-anchor="end">P₄</text>
+    </g>
+  </g>
+
+  <!-- C = K5 -->
+  <g aria-label="Five vertices in C, each connected to the other four">
+    <g class="edge">
+      <line x1="1330" y1="315" x2="1475" y2="420"/><line x1="1330" y1="315" x2="1420" y2="590"/><line x1="1330" y1="315" x2="1240" y2="590"/><line x1="1330" y1="315" x2="1185" y2="420"/>
+      <line x1="1475" y1="420" x2="1420" y2="590"/><line x1="1475" y1="420" x2="1240" y2="590"/><line x1="1475" y1="420" x2="1185" y2="420"/>
+      <line x1="1420" y1="590" x2="1240" y2="590"/><line x1="1420" y1="590" x2="1185" y2="420"/><line x1="1240" y1="590" x2="1185" y2="420"/>
+    </g>
+
+    <g transform="translate(1330 315)"><circle r="25" class="node-highlight"/><text class="text node-label">c₀</text></g>
+    <g transform="translate(1475 420)"><circle r="25" class="node-highlight"/><text class="text node-label">c₁</text></g>
+    <g transform="translate(1420 590)"><circle r="25" class="node-highlight"/><text class="text node-label">c₂</text></g>
+    <g transform="translate(1240 590)"><circle r="25" class="node"/><text class="text node-label">c₃</text></g>
+    <g transform="translate(1185 420)"><circle r="25" class="node"/><text class="text node-label">c₄</text></g>
+  </g>
+
+  <!-- Representative cyclic rule: P0 connects to c0,c1,c2. -->
+  <g aria-label="P zero connects to c zero, c one, and c two; each later pair shifts those three connections by one vertex">
+    <path d="M 926 302 C 1060 255, 1175 270, 1304 308" class="edge-highlight" marker-end="url(#arrow-light)"/>
+    <path d="M 926 320 C 1110 305, 1290 330, 1450 410" class="edge-highlight" marker-end="url(#arrow-light)"/>
+    <path d="M 926 338 C 1110 390, 1270 485, 1398 575" class="edge-highlight" marker-end="url(#arrow-light)"/>
+    <text x="1110" y="254" class="text muted small" text-anchor="middle">each pair → 3 consecutive C vertices</text>
+  </g>
+</svg>
